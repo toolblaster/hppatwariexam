@@ -9,24 +9,144 @@
         "q": "When does the 'Agricultural Year' start in Revenue records?",
         "options": ["1st January", "1st April", "16th June", "1st October"],
         "correct": 2,
-        "explanation": "It starts from 16th June and ends on 15th June of the next year."
+        "explanation": "It starts from 16th June (Kharif sowing season) and ends on 15th June."
     },
     {
-        "q": "How many Bighas are approximately in 1 Acre in HP?",
+        "q": "Which form number is used for the Khasra Girdawari register?",
+        "options": ["Form No. 1", "Form No. 4", "Form No. 22", "Form No. 10"],
+        "correct": 1,
+        "explanation": "Khasra Girdawari (Harvest Inspection) is maintained on Form No. 4."
+    },
+    {
+        "q": "How many Bighas are approximately in 1 Acre in HP (Standard)?",
         "options": ["2 Bigha", "5 Bigha", "10 Bigha", "20 Bigha"],
         "correct": 1,
-        "explanation": "Standard calculation: 1 Acre ≈ 5 Bigha."
+        "explanation": "Standard calculation for exams: 1 Acre ≈ 5 Bigha."
     },
     {
-        "q": "Who prepares the Jamabandi?",
-        "options": ["Tehsildar", "Kanungo", "Patwari", "DC"],
+        "q": "Who prepares the Jamabandi and who attests it?",
+        "options": ["Patwari prepares, Kanungo attests", "Kanungo prepares, Tehsildar attests", "Patwari prepares, Revenue Officer attests", "DC prepares, Patwari attests"],
         "correct": 2,
-        "explanation": "The Patwari prepares it, and the Revenue Officer attests it."
+        "explanation": "The Patwari prepares the Jamabandi, and the Revenue Officer (Tehsildar/Naib Tehsildar) attests it."
     },
     {
-        "q": "Under which Act is buying land by non-agriculturists restricted?",
-        "options": ["Revenue Act 1954", "Tenancy Act 1972 (Sec 118)", "PESA Act", "Land Ceiling Act"],
+        "q": "What is the fee (Pachotra) collected by the Nambardar?",
+        "options": ["10% of Revenue", "5% Surcharge on Revenue", "Fixed Salary", "No Fee"],
         "correct": 1,
-        "explanation": "Section 118 of the HP Tenancy and Land Reforms Act, 1972."
+        "explanation": "Nambardars get a 5% surcharge on the Land Revenue collected, called 'Pachotra'."
+    },
+    {
+        "q": "Under Section 118, who grants permission to buy land?",
+        "options": ["Patwari", "Tehsildar", "State Government", "Village Pradhan"],
+        "correct": 2,
+        "explanation": "Permission for non-agriculturists is granted by the State Government (Cabinet), though limited powers are delegated to the DC for small plots."
+    },
+    {
+        "q": "What is the time limit to report acquisition of land (Mutation) under Section 34?",
+        "options": ["1 Month", "3 Months", "6 Months", "1 Year"],
+        "correct": 1,
+        "explanation": "Section 34 requires the person acquiring the right to report it to the Patwari within 3 months."
+    },
+    {
+        "q": "Which officer handles 'Partition' (Taqseem) cases?",
+        "options": ["Field Kanungo", "Naib Tehsildar", "Assistant Collector 1st Grade", "Patwari"],
+        "correct": 2,
+        "explanation": "Partition (Section 123) is a judicial function handled by the Assistant Collector 1st Grade (Tehsildar/SDM)."
+    },
+    {
+        "q": "What is 'Sihadda' in demarcation?",
+        "options": ["A revenue tax", "A type of soil", "A tri-junction boundary pillar", "A mutation type"],
+        "correct": 2,
+        "explanation": "Sihadda is a permanent stone pillar marking the point where boundaries of three villages meet. It is the reference point for surveys."
+    },
+    {
+        "q": "What is 'Roznamcha Waqiati'?",
+        "options": ["Daily Diary of Patwari", "Weekly Report of Kanungo", "Monthly Report of Tehsildar", "Annual Report of DC"],
+        "correct": 0,
+        "explanation": "It is the Daily Diary where the Patwari records daily events like hailstorms, deaths, and official visits."
+    },
+    {
+        "q": "Which Act abolished the system of 'Big Landed Estates' in HP?",
+        "options": ["HP Land Revenue Act 1954", "HP Big Landed Estates Abolition Act 1953", "HP Tenancy Act 1972", "HP Ceiling Act 1972"],
+        "correct": 1,
+        "explanation": "The HP Abolition of Big Landed Estates and Land Reforms Act, 1953 abolished Zamindari."
+    },
+    {
+        "q": "What is the maximum fine for encroachment under Section 163?",
+        "options": ["₹500 per bigha", "₹2000 per bigha", "₹5000 per bigha", "₹10000 per bigha"],
+        "correct": 1,
+        "explanation": "The standard fine cited in exams is often ₹2000 per bigha (subject to amendments, but this is the classic text answer)."
+    },
+    {
+        "q": "Who is the appointing authority for a Patwari?",
+        "options": ["Tehsildar", "SDM", "Deputy Commissioner (Collector)", "Financial Commissioner"],
+        "correct": 2,
+        "explanation": "The Deputy Commissioner (Collector) is the appointing authority for Patwaris."
+    },
+    {
+        "q": "What does 'Banjar Kadim' mean?",
+        "options": ["New Fallow", "Old Fallow (4 years+)", "Cultivated Land", "Forest Land"],
+        "correct": 1,
+        "explanation": "Banjar Kadim refers to land that has remained uncultivated for 8 harvests (4 years) or more."
+    },
+    {
+        "q": "What is 'Tatima'?",
+        "options": ["A map of a divided field", "A tax receipt", "A type of soil", "A revenue officer"],
+        "correct": 0,
+        "explanation": "Tatima is a supplementary map prepared when a specific Khasra number is divided into parts."
+    },
+    {
+        "q": "When does the Kharif (Sauni) Girdawari start?",
+        "options": ["1st March", "1st April", "1st October", "1st November"],
+        "correct": 2,
+        "explanation": "Kharif Girdawari officially begins on 1st October."
+    },
+    {
+        "q": "Which officer has the power to Remit (Cancel) land revenue?",
+        "options": ["Tehsildar", "Collector", "Divisional Commissioner", "Financial Commissioner"],
+        "correct": 3,
+        "explanation": "Only the Financial Commissioner has the power to Remit (completely cancel) land revenue; others can only Suspend it."
+    },
+    {
+        "q": "What is the length of a standard Gunter's Chain?",
+        "options": ["33 feet", "66 feet", "100 feet", "165 feet"],
+        "correct": 1,
+        "explanation": "A standard Gunter's Chain is 66 feet long and consists of 100 links."
+    },
+    {
+        "q": "Who maintains the 'Lal Kitab' (Village Note Book)?",
+        "options": ["Pradhan", "Patwari", "Secretary", "Kanungo"],
+        "correct": 1,
+        "explanation": "The Patwari maintains the Lal Kitab, which contains statistical data of the village (crops, population, livestock)."
+    },
+    {
+        "q": "In a Musavi (Map), what color is used to show water bodies?",
+        "options": ["Red", "Green", "Blue", "Black"],
+        "correct": 2,
+        "explanation": "Water bodies like rivers and ponds are typically shown in Blue."
+    },
+    {
+        "q": "Which register is known as 'Missal Haquiyat'?",
+        "options": ["Daily Diary", "Mutation Register", "Standing Record of Rights (Settlement)", "Crop Register"],
+        "correct": 2,
+        "explanation": "Missal Haquiyat is the 'Standing Record of Rights' prepared at the time of Settlement."
+    },
+    {
+        "q": "Who is the 'Settlement Officer' equivalent to in rank?",
+        "options": ["Tehsildar", "SDM", "Deputy Commissioner", "Kanungo"],
+        "correct": 2,
+        "explanation": "The Settlement Officer generally holds a rank equivalent to the Deputy Commissioner (Collector) for settlement work."
+    },
+    {
+        "q": "What is the appeal period for the Collector's order?",
+        "options": ["30 Days", "60 Days", "90 Days", "1 Year"],
+        "correct": 0,
+        "explanation": "The limitation period for an appeal to the Collector is 30 days."
+    },
+    {
+        "q": "What does 'Gair Mumkin' land signify?",
+        "options": ["Highly fertile land", "Forest land", "Uncultivable land (Roads/Buildings)", "Orchard land"],
+        "correct": 2,
+        "explanation": "Gair Mumkin refers to land that is not cultivable because it is occupied by buildings, roads, or riverbeds."
     }
 ]

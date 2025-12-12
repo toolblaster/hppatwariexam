@@ -25,6 +25,26 @@
         "details": "Limits the maximum land a family can own. <br><strong>Limit:</strong> Approx 10 to 30 Acres (Standard Acres) depending on land quality (irrigated vs barren). Surplus land is vested in the State. <br><strong>Unit:</strong> Family of 5 members." 
     },
     { 
+        "year": "1968", 
+        "title": "HP Nautor Land Rules", 
+        "details": "Governs the grant of government wasteland ('Nautor') to landless/poor residents. <br><strong>Limit:</strong> Generally up to 20 Bighas. <br><strong>Current Status:</strong> Heavily restricted by the Forest Conservation Act, 1980."
+    },
+    { 
+        "year": "1968", 
+        "title": "HP Transfer of Land (Regulation) Act", 
+        "details": "Specific protection for Scheduled Tribes. <br><strong>Key Provision:</strong> Prohibits transfer of land from a Tribal to a Non-Tribal in Scheduled Areas without the specific permission of the Deputy Commissioner."
+    },
+    { 
+        "year": "1994", 
+        "title": "HP Panchayati Raj Act", 
+        "details": "<strong>Section 12:</strong> Empowers the Gram Panchayat to remove encroachments from public paths and drains. The Patwari assists by providing revenue record evidence for these proceedings."
+    },
+    { 
+        "year": "2013", 
+        "title": "RFCTLARR Act (Land Acquisition)", 
+        "details": "Right to Fair Compensation and Transparency in Land Acquisition. Replaced the 1894 Act. <br><strong>Role:</strong> Patwaris assist in the Social Impact Assessment (SIA) and survey measurement for compensation calculation."
+    },
+    { 
         "year": "1996", 
         "title": "PESA Act (Tribal Rights)", 
         "details": "Applies to Scheduled Areas (Kinnaur, Lahaul-Spiti, Pangi). <br><strong>Gram Sabha</strong> is the supreme authority for land alienation and ownership of Minor Forest Produce. <br><strong>Consultation:</strong> Mandatory before land acquisition in these areas." 

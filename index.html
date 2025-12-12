@@ -3,8 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="The complete resource for HP Patwari Exam preparation. Master the Technical Section (Land Records, Revenue) and General Knowledge with interactive study tools.">
-    <title>HP Patwari Exam: Technical Master Guide & GK Hub</title>
+    
+    <!-- SEO & Meta Tags for hppatwariexam.toolblaster.com -->
+    <title>HP Patwari Exam Prep | Technical Master Guide & GK Hub</title>
+    <meta name="description" content="The #1 resource for HP Patwari Exam preparation. Master the Technical Section (Land Records, Revenue Acts), Surveying, and General Knowledge. Interactive flashcards and quizzes.">
+    <meta name="keywords" content="HP Patwari Exam, Himachal Pradesh Land Records, Patwari Syllabus, HP Revenue Acts, Jamabandi, GK Himachal">
+    <link rel="canonical" href="https://hppatwariexam.toolblaster.com/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hppatwariexam.toolblaster.com/">
+    <meta property="og:title" content="HP Patwari Exam: Technical Master Guide">
+    <meta property="og:description" content="Master HP Land Records and Revenue Laws with this interactive study guide.">
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Chart.js -->
@@ -83,19 +94,12 @@
             padding: 1rem;
         }
         .flip-card-back { transform: rotateY(180deg); }
+        
+        /* Smooth Scrolling */
+        html { scroll-behavior: smooth; }
     </style>
-
-    <!-- Application Structure Plan: 
-         1. Header: Context and "Start Learning" CTA.
-         2. Terminology Deck: Grid of flip cards for active recall of definitions.
-         3. Measurement Lab: Interactive converter + Comparative Bar Chart (Chart.js) to visualize land units.
-         4. Legal Timeline: Vertical layout for Acts/Sections.
-         5. Admin Hierarchy: Visual tree structure.
-         6. "Trap" Quiz: Interactive JS quiz for tricky questions.
-         Why this structure? It breaks the dense "Master Guide" into bite-sized, interactive learning modules suitable for rapid revision.
-    -->
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased">
+<body class="bg-slate-50 text-slate-800 antialiased flex flex-col min-h-screen">
 
     <!-- Navigation -->
     <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-sm">
@@ -111,12 +115,10 @@
                     <a href="#hierarchy" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition">Hierarchy</a>
                     <a href="#quiz" class="px-4 py-2 bg-blue-600 text-white rounded-full text-sm font-semibold hover:bg-blue-700 transition shadow-md">Take Quiz</a>
                 </div>
-                <!-- Mobile menu button (simple implementation) -->
+                <!-- Mobile menu button -->
                 <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-slate-900 focus:outline-none">
-                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-                        </svg>
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-slate-900 focus:outline-none p-2" aria-label="Open Menu">
+                        <i class="fa-solid fa-bars text-xl"></i>
                     </button>
                 </div>
             </div>
@@ -154,9 +156,15 @@
         </div>
     </header>
 
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24 pb-24">
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24 pb-24 flex-grow">
         
-        <div id="app-content" class="space-y-24">
+        <!-- Loading Indicator -->
+        <div id="loading-indicator" class="text-center py-20">
+            <div class="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500 mx-auto mb-4"></div>
+            <p class="text-slate-600 font-medium">Loading data from server...</p>
+        </div>
+
+        <div id="app-content" class="hidden space-y-24">
             <!-- MODULE 1: TERMINOLOGY (Flashcards) -->
             <section id="terminology" class="scroll-mt-24">
                 <div class="text-center mb-12">
@@ -174,7 +182,7 @@
                     <button onclick="filterTerms('numbers')" class="term-filter px-4 py-1.5 rounded-full bg-slate-200 text-slate-600 hover:bg-slate-300 text-sm font-medium transition">Numbers</button>
                 </div>
 
-                <!-- Flashcard Grid - Updated for 5 Columns -->
+                <!-- Flashcard Grid (Responsive 1 -> 5 cols) -->
                 <div id="term-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
                     <!-- Cards injected via JS -->
                 </div>
@@ -255,48 +263,13 @@
             <!-- MODULE 4: HIERARCHY & TOOLS -->
             <section id="hierarchy" class="scroll-mt-24 grid lg:grid-cols-2 gap-12">
                 
-                <!-- Hierarchy Tree -->
+                <!-- Hierarchy Tree (Dynamic) -->
                 <div>
                     <h2 class="text-2xl font-bold text-slate-900 mb-6">Administrative Hierarchy</h2>
                     <p class="text-slate-600 mb-8 text-sm">The chain of command for revenue officers in Himachal Pradesh.</p>
                     
-                    <div class="relative pl-8 border-l-2 border-slate-200 space-y-8">
-                        <!-- Tree Items -->
-                        <div class="relative">
-                            <div class="absolute -left-[41px] top-3 h-4 w-4 rounded-full bg-blue-600 border-4 border-white shadow-sm"></div>
-                            <div class="bg-white p-4 rounded-lg shadow-sm border border-slate-200">
-                                <h4 class="font-bold text-slate-900">Financial Commissioner (Revenue)</h4>
-                                <p class="text-xs text-slate-500">Highest Revenue Authority in State</p>
-                            </div>
-                        </div>
-                        <div class="relative">
-                            <div class="absolute -left-[41px] top-3 h-4 w-4 rounded-full bg-blue-400 border-4 border-white shadow-sm"></div>
-                            <div class="bg-white p-4 rounded-lg shadow-sm border border-slate-200">
-                                <h4 class="font-bold text-slate-900">Divisional Commissioner</h4>
-                                <p class="text-xs text-slate-500">Mandi, Shimla, Kangra Divisions</p>
-                            </div>
-                        </div>
-                        <div class="relative">
-                            <div class="absolute -left-[41px] top-3 h-4 w-4 rounded-full bg-blue-300 border-4 border-white shadow-sm"></div>
-                            <div class="bg-white p-4 rounded-lg shadow-sm border border-slate-200">
-                                <h4 class="font-bold text-slate-900">Deputy Commissioner (Collector)</h4>
-                                <p class="text-xs text-slate-500">District Head</p>
-                            </div>
-                        </div>
-                        <div class="relative">
-                            <div class="absolute -left-[41px] top-3 h-4 w-4 rounded-full bg-slate-300 border-4 border-white shadow-sm"></div>
-                            <div class="bg-white p-4 rounded-lg shadow-sm border border-slate-200 ml-4 opacity-80">
-                                <h4 class="font-bold text-slate-800">SDM / Tehsildar</h4>
-                                <p class="text-xs text-slate-500">Revenue Officers (Class I)</p>
-                            </div>
-                        </div>
-                        <div class="relative">
-                            <div class="absolute -left-[41px] top-3 h-4 w-4 rounded-full bg-green-500 border-4 border-white shadow-sm"></div>
-                            <div class="bg-white p-4 rounded-lg shadow-md border-l-4 border-green-500">
-                                <h4 class="font-bold text-green-700">Patwari & Field Kanungo</h4>
-                                <p class="text-xs text-slate-500">Village Level - The Foundation</p>
-                            </div>
-                        </div>
+                    <div id="hierarchy-container" class="relative pl-8 border-l-2 border-slate-200 space-y-8">
+                        <!-- Tree Items injected via JS -->
                     </div>
                 </div>
 
@@ -339,7 +312,7 @@
                             <div id="result-area" class="hidden text-center py-8">
                                 <div class="text-6xl mb-4">🏆</div>
                                 <h3 class="text-2xl font-bold text-slate-900 mb-2">Quiz Complete!</h3>
-                                <p class="text-slate-600 mb-6">You scored <span id="final-score" class="font-bold text-blue-600 text-xl"></span> out of 5</p>
+                                <p class="text-slate-600 mb-6">You scored <span id="final-score" class="font-bold text-blue-600 text-xl"></span> out of <span id="total-qs">5</span></p>
                                 <button onclick="resetQuiz()" class="px-6 py-2 bg-slate-900 text-white rounded-lg hover:bg-slate-800 transition">Retry Quiz</button>
                             </div>
                         </div>
@@ -349,112 +322,30 @@
         </div>
     </main>
 
-    <footer class="bg-white border-t border-slate-200 py-12">
+    <footer class="bg-white border-t border-slate-200 py-12 mt-auto">
         <div class="max-w-7xl mx-auto px-4 text-center">
-            <p class="text-slate-500 text-sm">Designed for HP Patwari Exam Aspirants.</p>
-            <p class="text-slate-400 text-xs mt-2">Based on the Land Records & Revenue Master Guide.</p>
+            <p class="text-slate-500 text-sm">© HP Patwari Exam Ace. Designed for Aspirants.</p>
+            <p class="text-slate-400 text-xs mt-2">Based on the official Land Records & Revenue Syllabus.</p>
         </div>
     </footer>
 
     <!-- LOGIC -->
     <script>
-        // --- EMBEDDED DATA (To resolve fetch errors) ---
-        const terminologyData = [
-            {"id": 1, "term": "Jamabandi", "def": "Record of Rights (RoR). Main ownership register revised every 5 years.", "category": "records", "icon": "📚"},
-            {"id": 2, "term": "Khasra", "def": "Legal agricultural document with crop details. Contains unique Khasra Number (Plot No).", "category": "numbers", "icon": "🌾"},
-            {"id": 3, "term": "Khatauni", "def": "Register of Cultivators/Tenants. Arranged by cultivator holding.", "category": "records", "icon": "🧑‍🌾"},
-            {"id": 4, "term": "Girdawari", "def": "Bi-annual harvest inspection by Patwari. (Rabi & Kharif crops).", "category": "records", "icon": "👁️"},
-            {"id": 5, "term": "Intkaal", "def": "Mutation. Process of changing ownership (Sale, Inheritance, Gift).", "category": "records", "icon": "✍️"},
-            {"id": 6, "term": "Musavi", "def": "Original map drawn on thick paper/cloth during settlement.", "category": "maps", "icon": "🗺️"},
-            {"id": 7, "term": "Latha", "def": "Cloth copy of the map (Musavi) kept by Patwari for field use.", "category": "maps", "icon": "🧵"},
-            {"id": 8, "term": "Tatima", "def": "Map drawn when a Khasra number is divided (e.g., selling half a plot).", "category": "maps", "icon": "✂️"},
-            {"id": 9, "term": "Khewat No", "def": "Account number of the OWNER (Malik) in Jamabandi.", "category": "numbers", "icon": "🔢"},
-            {"id": 10, "term": "Muamla", "def": "Land Revenue (Tax/Laggan).", "category": "records", "icon": "💰"},
-            {"id": 11, "term": "Shajra Nasb", "def": "Genealogical/Family tree of landowners in the village.", "category": "records", "icon": "🌳"},
-            {"id": 12, "term": "Wajib-ul-Arz", "def": "Village Administration Paper recording customs and rights.", "category": "records", "icon": "📜"}
-        ];
-
-        const lawsData = [
-            { 
-                "year": "1954", 
-                "title": "HP Land Revenue Act", 
-                "details": "Governs Revenue Officers (Patwari/Tehsildar) and Revenue Collection. <br><strong>Key Sections:</strong> Sec 32 (RoR), Sec 34 (Report Acquisition), Sec 35 (Mutation), Sec 16 (Partition)." 
-            },
-            { 
-                "year": "1972", 
-                "title": "HP Tenancy & Land Reforms Act", 
-                "details": "Gave rights to tenants. <br><strong>Section 118:</strong> Restricts non-agriculturists from buying land in HP without Govt permission. <br><strong>Reform:</strong> Abolished intermediaries (Zamindars)." 
-            },
-            { 
-                "year": "Misc", 
-                "title": "Other Key Acts", 
-                "details": "<strong>PESA Act 1996:</strong> Tribal rights & Gram Sabha powers. <br><strong>MGNREGA:</strong> 100-120 days wage employment (Patwari verifies land)." 
+        // --- GLOBAL DATA HOLDERS ---
+        let terminologyData = [];
+        let lawsData = [];
+        let hierarchyData = [];
+        let toolsData = [];
+        let quizQuestions = [];
+        
+        // --- DATA FETCHING (Production Mode) ---
+        async function fetchData(url) {
+            const response = await fetch(url);
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status} for ${url}`);
             }
-        ];
-
-        const toolsData = [
-            {
-                "title": "HIMBHOOMI",
-                "desc": "Official computerized Land Records Centre. View Jamabandi online.",
-                "icon": "fa-solid fa-desktop",
-                "bg_color": "bg-blue-100",
-                "hover_color": "group-hover:bg-blue-600"
-            },
-            {
-                "title": "mHimBhoomi",
-                "desc": "Mobile app version. Allows citizens to check land details.",
-                "icon": "fa-solid fa-mobile-screen",
-                "bg_color": "bg-green-100",
-                "hover_color": "group-hover:bg-green-600"
-            },
-            {
-                "title": "PM-KISAN",
-                "desc": "₹6,000/year support. Patwari verifies land cultivator status.",
-                "icon": "fa-solid fa-wheat-awn",
-                "bg_color": "bg-yellow-100",
-                "hover_color": "group-hover:bg-yellow-600"
-            },
-            {
-                "title": "e-Praman",
-                "desc": "Issuance of Himachali Bonafide, Caste certs based on Patwari reports.",
-                "icon": "fa-solid fa-scroll",
-                "bg_color": "bg-purple-100",
-                "hover_color": "group-hover:bg-purple-600"
-            }
-        ];
-
-        const quizQuestions = [
-            {
-                "q": "What is the difference between 'Min' and 'Salam' numbers in Khasra?",
-                "options": ["Min is full, Salam is part", "Salam is full field, Min is a part", "Both mean the same", "Min is for government land"],
-                "correct": 1,
-                "explanation": "Salam means the whole/intact field number. Min indicates a portion/part of the field."
-            },
-            {
-                "q": "When does the 'Agricultural Year' start in Revenue records?",
-                "options": ["1st January", "1st April", "16th June", "1st October"],
-                "correct": 2,
-                "explanation": "It starts from 16th June and ends on 15th June of the next year."
-            },
-            {
-                "q": "How many Bighas are approximately in 1 Acre in HP?",
-                "options": ["2 Bigha", "5 Bigha", "10 Bigha", "20 Bigha"],
-                "correct": 1,
-                "explanation": "Standard calculation: 1 Acre ≈ 5 Bigha."
-            },
-            {
-                "q": "Who prepares the Jamabandi?",
-                "options": ["Tehsildar", "Kanungo", "Patwari", "DC"],
-                "correct": 2,
-                "explanation": "The Patwari prepares it, and the Revenue Officer attests it."
-            },
-            {
-                "q": "Under which Act is buying land by non-agriculturists restricted?",
-                "options": ["Revenue Act 1954", "Tenancy Act 1972 (Sec 118)", "PESA Act", "Land Ceiling Act"],
-                "correct": 1,
-                "explanation": "Section 118 of the HP Tenancy and Land Reforms Act, 1972."
-            }
-        ];
+            return await response.json();
+        }
         
         // --- DOM MANIPULATION ---
 
@@ -539,7 +430,28 @@
             arrow.classList.toggle('rotate-180');
         }
 
-        // 4. Render Digital Tools (FontAwesome Integration)
+        // 4. Render Hierarchy (Dynamic)
+        function renderHierarchy() {
+            const container = document.getElementById('hierarchy-container');
+            container.innerHTML = '';
+            hierarchyData.forEach(item => {
+                const div = document.createElement('div');
+                div.className = "relative";
+                // Color mapping logic for dots based on JSON color strings
+                let dotColorClass = item.color.replace('bg-', 'bg-').replace('slate', 'slate').replace('green', 'green'); 
+                
+                div.innerHTML = `
+                    <div class="absolute -left-[41px] top-3 h-4 w-4 rounded-full ${item.color} border-4 border-white shadow-sm"></div>
+                    <div class="bg-white p-4 rounded-lg shadow-sm border border-slate-200 ${item.role.includes('SDM') ? 'ml-4 opacity-80' : ''}">
+                        <h4 class="font-bold text-slate-900">${item.role}</h4>
+                        <p class="text-xs text-slate-500">${item.desc}</p>
+                    </div>
+                `;
+                container.appendChild(div);
+            });
+        }
+
+        // 5. Render Tools
         function renderTools() {
             const grid = document.getElementById('tools-grid');
             grid.innerHTML = '';
@@ -557,7 +469,7 @@
             });
         }
 
-        // 5. Chart.js Initialization
+        // 6. Chart.js Initialization
         function initChart() {
             const ctx = document.getElementById('landChart').getContext('2d');
             new Chart(ctx, {
@@ -580,7 +492,7 @@
             });
         }
 
-        // 6. Quiz Logic
+        // 7. Quiz Logic
         let currentQ = 0;
         let score = 0;
 
@@ -589,6 +501,7 @@
                 document.getElementById('question-area').classList.add('hidden');
                 document.getElementById('result-area').classList.remove('hidden');
                 document.getElementById('final-score').innerText = score;
+                document.getElementById('total-qs').innerText = quizQuestions.length;
                 return;
             }
 
@@ -648,12 +561,51 @@
         }
 
         // --- INITIALIZATION ---
-        function initApp() {
-            renderTerms('all');
-            renderLaws();
-            renderTools();
-            initChart();
-            loadQuiz();
+        async function initApp() {
+            try {
+                // Fetch all data concurrently
+                // Note: These paths must match the folder structure on your hosting server.
+                const [terms, laws, hierarchy, tools, quiz] = await Promise.all([
+                    fetchData('patwari-json-data/terminology_data.json'),
+                    fetchData('patwari-json-data/laws_data.json'),
+                    fetchData('patwari-json-data/hierarchy_data.json'),
+                    fetchData('patwari-json-data/tools_data.json'),
+                    fetchData('patwari-json-data/quiz_data.json')
+                ]);
+
+                // Populate global variables
+                terminologyData = terms;
+                lawsData = laws;
+                hierarchyData = hierarchy;
+                toolsData = tools;
+                quizQuestions = quiz;
+
+                // Render components
+                renderTerms('all');
+                renderLaws();
+                renderHierarchy();
+                renderTools();
+                initChart();
+                loadQuiz();
+                
+                // Hide loading indicator and show content
+                document.getElementById('loading-indicator').classList.add('hidden');
+                document.getElementById('app-content').classList.remove('hidden');
+
+            } catch (error) {
+                console.error("Initialization failed:", error);
+                document.getElementById('loading-indicator').innerHTML = `
+                    <div class="text-red-600 bg-red-50 p-6 rounded-lg inline-block shadow-md">
+                        <p class="font-bold text-lg mb-2">Error loading data.</p>
+                        <p class="text-sm">Could not fetch JSON files from the server.</p>
+                        <ul class="text-xs mt-3 text-slate-500 text-left list-disc list-inside">
+                            <li>Ensure the folder <code>patwari-json-data</code> exists.</li>
+                            <li>Check that all 5 .json files are inside it.</li>
+                            <li>Check console for exact 404/500 error.</li>
+                        </ul>
+                    </div>
+                `;
+            }
         }
 
         document.addEventListener('DOMContentLoaded', () => {
@@ -665,6 +617,5 @@
 
     </script>
     
-    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. FontAwesome CDN Active. -->
 </body>
 </html>

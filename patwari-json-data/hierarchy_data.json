@@ -1,27 +1,62 @@
 [
     { 
         "role": "Financial Commissioner (Revenue)", 
-        "desc": "Highest Revenue Authority in State", 
-        "color": "bg-blue-600" 
+        "desc": "Highest Revenue Authority. Ultimate appellate court for revenue cases. Equivalent to High Court for Revenue matters.", 
+        "color": "bg-blue-800" 
+    },
+    { 
+        "role": "Director Land Records (DLR)", 
+        "desc": "Head of Technical Wing. Responsible for digitization, Kanungo exams, and record modernization.", 
+        "color": "bg-blue-700" 
     },
     { 
         "role": "Divisional Commissioner", 
-        "desc": "Mandi, Shimla, Kangra Divisions", 
-        "color": "bg-blue-400" 
+        "desc": "Head of Division (Mandi, Shimla, Kangra). Oversees multiple districts. First appellate authority against Collector's orders.", 
+        "color": "bg-blue-600" 
+    },
+    { 
+        "role": "Settlement Officer (SO)", 
+        "desc": "Head of Settlement operations in a district. Equivalent to DC but focuses only on survey and record preparation.", 
+        "color": "bg-purple-600" 
     },
     { 
         "role": "Deputy Commissioner (Collector)", 
-        "desc": "District Head", 
+        "desc": "District Head. Appointing authority for Patwaris. Controls the District Record Room (Muhafiz Khana).", 
+        "color": "bg-blue-500" 
+    },
+    { 
+        "role": "SDM / Tehsildar (AC 1st Grade)", 
+        "desc": "Assistant Collector 1st Grade. Has power to decide Partition (Taqseem) and Encroachment cases. Revenue Officer Class I.", 
+        "color": "bg-blue-400" 
+    },
+    { 
+        "role": "Naib Tehsildar (AC 2nd Grade)", 
+        "desc": "Assistant Collector 2nd Grade. Attests Mutations. Can decide undisputed cases. Cannot decide contested Partitions.", 
         "color": "bg-blue-300" 
     },
     { 
-        "role": "SDM / Tehsildar", 
-        "desc": "Revenue Officers (Class I)", 
-        "color": "bg-slate-300" 
+        "role": "Office Kanungo (Sadar Kanungo)", 
+        "desc": "Headquarters based. Maintains statistical records and salary bills of Patwaris. Custodian of Tehsil records.", 
+        "color": "bg-slate-500" 
     },
     { 
-        "role": "Patwari & Field Kanungo", 
-        "desc": "Village Level - The Foundation", 
+        "role": "Field Kanungo (Supervisor)", 
+        "desc": "Supervises ~6-7 Patwaris. Verifies 100% of mutation entries and Girdawari work on the spot.", 
+        "color": "bg-slate-400" 
+    },
+    { 
+        "role": "Patwari (Village Accountant)", 
+        "desc": "Maintains all 23+ registers. Custodian of records at village level. Reporting officer for crop loss.", 
+        "color": "bg-green-600" 
+    },
+    { 
+        "role": "Chainman", 
+        "desc": "Assists the Patwari in field measurements by holding the Jarib (Chain).", 
+        "color": "bg-green-400" 
+    },
+    { 
+        "role": "Nambardar (Village Headman)", 
+        "desc": "Collects Land Revenue. Receives 5% 'Pachotra' (Surcharge) as fee. Reports deaths and law & order issues.", 
         "color": "bg-green-500" 
     }
 ]

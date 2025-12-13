@@ -4,7 +4,6 @@
  */
 
 // 0. PREVENT CLS: Immediately inject styles to reserve space for the header
-// This ensures #global-nav has height before the JS populates it, stopping layout shifts.
 (function() {
     const style = document.createElement('style');
     style.textContent = `
@@ -17,12 +16,12 @@
     document.head.appendChild(style);
 })();
 
-// 1. Centralized Styles (Edit these to change the look globally)
+// 1. Centralized Styles
 const GlobalStyles = {
-    // Navigation: Static (scrolls with page), White background, Bottom border, Shadow, Fixed Height
+    // Navigation: Static, White, Border, Shadow
     nav: "bg-white border-b border-slate-200/80 shadow-[0_1px_2px_rgba(0,0,0,0.03)] nav-height w-full z-50",
     
-    // Footer: White background, Top border, Padding
+    // Footer: White, Top border, Padding
     footer: "bg-white border-t border-slate-200 py-6 mt-auto"
 };
 
@@ -63,7 +62,8 @@ const AppComponents = {
                         <span class="text-xs font-bold uppercase tracking-wider hidden sm:block font-heading">Hub</span>
                     </a>
                     <div class="h-4 w-px bg-slate-300 mx-2"></div>
-                    <span class="text-base font-bold text-slate-900 tracking-tight font-heading">Technical <span class="text-blue-600">Guide</span></span>
+                    <!-- UPDATED: Added 'Patwari' here in the Header -->
+                    <span class="text-base font-bold text-slate-900 tracking-tight font-heading">Patwari Technical <span class="text-blue-600">Guide</span></span>
                 </div>
                 
                 <!-- Compact Desktop Menu -->
@@ -98,8 +98,7 @@ const AppComponents = {
 };
 
 /**
- * Injects Header and Footer into the page and applies global styles.
- * @param {Object} options - { type: 'home' | 'technical', rootPath: string }
+ * Injects Header and Footer into the page.
  */
 window.loadHeaderFooter = function(options) {
     const { type, rootPath } = options || { type: 'home', rootPath: '.' };
@@ -107,14 +106,14 @@ window.loadHeaderFooter = function(options) {
     // 1. Setup Footer
     const footerEl = document.getElementById('global-footer');
     if (footerEl) {
-        footerEl.className = GlobalStyles.footer; // Apply global footer classes
+        footerEl.className = GlobalStyles.footer;
         footerEl.innerHTML = AppComponents.footerContent();
     }
 
     // 2. Setup Nav
     const navEl = document.getElementById('global-nav');
     if (navEl) {
-        navEl.className = GlobalStyles.nav; // Apply global nav classes
+        navEl.className = GlobalStyles.nav;
         
         if (type === 'home') {
             navEl.innerHTML = AppComponents.navHomeContent();

@@ -29,7 +29,8 @@ const GlobalStyles = {
 const AppComponents = {
     footerContent: () => `
         <div class="max-w-7xl mx-auto px-4 text-center">
-            <p class="text-slate-400 text-[10px] uppercase font-bold tracking-wider font-sans">© 2025 HP Patwari Exam Prep</p>
+            <!-- ACCESSIBILITY: Increased contrast from slate-400 to slate-500 -->
+            <p class="text-slate-500 text-[10px] uppercase font-bold tracking-wider font-sans">© 2025 HP Patwari Exam Prep</p>
         </div>
     `,
 
@@ -39,14 +40,15 @@ const AppComponents = {
                 <!-- Cap Icon Logo -->
                 <div class="flex items-center gap-3">
                     <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white shadow-sm">
-                        <i class="fa-solid fa-graduation-cap"></i>
+                        <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
                     </div>
                     <span class="text-xl font-bold text-slate-900 tracking-tight font-heading">HP Exam <span class="text-blue-600">Hub</span></span>
                 </div>
                 
                 <div class="flex items-center gap-4">
-                    <a href="https://hpsssb.hp.gov.in/" target="_blank" class="text-xs font-semibold text-slate-500 hover:text-blue-600 transition flex items-center gap-1 bg-slate-100 px-3 py-1.5 rounded-full hover:bg-blue-50 font-sans">
-                        Official Site <i class="fa-solid fa-external-link-alt text-[10px]"></i>
+                    <!-- ACCESSIBILITY: Added aria-label for clearer link purpose -->
+                    <a href="https://hpsssb.hp.gov.in/" target="_blank" aria-label="Visit Official HPSSSB Website" class="text-xs font-semibold text-slate-600 hover:text-blue-600 transition flex items-center gap-1 bg-slate-100 px-3 py-1.5 rounded-full hover:bg-blue-50 font-sans">
+                        Official Site <i class="fa-solid fa-external-link-alt text-[10px]" aria-hidden="true"></i>
                     </a>
                 </div>
             </div>
@@ -57,12 +59,12 @@ const AppComponents = {
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
             <div class="flex justify-between items-center h-full">
                 <div class="flex items-center gap-3">
-                    <a href="${rootPath}/index.html" class="flex items-center gap-2 group text-slate-500 hover:text-blue-600 transition">
-                        <i class="fa-solid fa-arrow-left text-sm"></i>
+                    <!-- ACCESSIBILITY: Added aria-label -->
+                    <a href="${rootPath}/index.html" aria-label="Back to Exam Hub" class="flex items-center gap-2 group text-slate-500 hover:text-blue-600 transition">
+                        <i class="fa-solid fa-arrow-left text-sm" aria-hidden="true"></i>
                         <span class="text-xs font-bold uppercase tracking-wider hidden sm:block font-heading">Hub</span>
                     </a>
                     <div class="h-4 w-px bg-slate-300 mx-2"></div>
-                    <!-- UPDATED: Added 'Patwari' here in the Header -->
                     <span class="text-base font-bold text-slate-900 tracking-tight font-heading">Patwari Technical <span class="text-blue-600">Guide</span></span>
                 </div>
                 
@@ -78,8 +80,9 @@ const AppComponents = {
 
                 <!-- Mobile menu button -->
                 <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-btn" class="text-slate-600 p-2 focus:outline-none">
-                        <i class="fa-solid fa-bars text-lg"></i>
+                    <!-- ACCESSIBILITY: Added aria-label for button name -->
+                    <button id="mobile-menu-btn" aria-label="Toggle navigation menu" class="text-slate-600 p-2 focus:outline-none">
+                        <i class="fa-solid fa-bars text-lg" aria-hidden="true"></i>
                     </button>
                 </div>
             </div>

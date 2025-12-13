@@ -6,6 +6,7 @@
  * 2. Custom Components (Flip Cards, Tree Lines, Gradient Text)
  * 3. Layout Stability (Nav Height)
  * 4. Animations & Shadows
+ * 5. Skeleton Loading (CLS Prevention)
  * ----------------------------------------------------------------------
  */
 
@@ -21,8 +22,15 @@ tailwind.config = {
                 'smooth-hover': '0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025)',
                 'glow': '0 0 15px rgba(59, 130, 246, 0.15)',
             },
+            keyframes: {
+                'skeleton-loading': {
+                    '0%': { backgroundPosition: '200% 0' },
+                    '100%': { backgroundPosition: '-200% 0' },
+                }
+            },
             animation: {
                 'subtle-pulse': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                'skeleton': 'skeleton-loading 1.5s infinite',
             }
         }
     },
@@ -119,6 +127,14 @@ tailwind.config = {
                     backgroundColor: '#e2e8f0', 
                     transform: 'translateX(-50%)',
                     zIndex: '0',
+                },
+
+                // SKELETON LOADER (CLS Prevention)
+                '.skeleton': {
+                    backgroundColor: '#e2e8f0',
+                    backgroundImage: 'linear-gradient(90deg, #e2e8f0 25%, #f1f5f9 50%, #e2e8f0 75%)',
+                    backgroundSize: '200% 100%',
+                    animation: 'skeleton-loading 1.5s infinite',
                 },
 
                 /* -----------------------------------------------------

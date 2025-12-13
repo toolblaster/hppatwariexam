@@ -1,6 +1,6 @@
 [
     {"id": 1, "term": "Jamabandi", "def": "Record of Rights (RoR). The conclusive record of ownership, cultivation, and revenue. Revised every 5 years (Quinquennial). Entries presumed true under Sec 45.", "category": "records", "icon": "📚"},
-    {"id": 2, "term": "Khasra", "def": "Field Book. Legal agricultural document detailing crop, area, soil type, and possession for each plot (Khasra No). Base for Girdawari.", "category": "numbers", "icon": "🌾"},
+    {"id": 2, "term": "Khasra", "def": "Field Book. Legal agricultural document with crop details (area, soil type, possession). Contains the unique Khasra Number (Plot No). Base for Girdawari.", "category": "numbers", "icon": "🌾"},
     {"id": 3, "term": "Khatauni", "def": "Register of Cultivators/Tenants. Arranged by the holding of the cultivator (Kashtkar). Details who actually tills the land.", "category": "records", "icon": "🧑‍🌾"},
     {"id": 4, "term": "Girdawari", "def": "Harvest Inspection. Bi-annual crop inspection by Patwari (Oct 1st for Kharif, Mar 1st for Rabi) on Form No. 4.", "category": "records", "icon": "👁️"},
     {"id": 5, "term": "Intkaal (Mutation)", "def": "Process of updating the Jamabandi to reflect changes in ownership (Sale, Inheritance, Mortgage). Entered in Register No. 6.", "category": "records", "icon": "✍️"},
@@ -43,5 +43,21 @@
     {"id": 42, "term": "Thakbast", "def": "The process of laying down boundary lines of a new revenue estate/village.", "category": "maps", "icon": "📏"},
     {"id": 43, "term": "Kistwar", "def": "Field-wise detailed survey or measurement.", "category": "maps", "icon": "📐"},
     {"id": 44, "term": "Halqa", "def": "The circle of jurisdiction. E.g., Patwar Halqa (group of villages), Kanungo Halqa.", "category": "records", "icon": "⭕"},
-    {"id": 45, "term": "Adda", "def": "Cross-staff instrument used in surveying to set out right angles (90 degrees).", "category": "maps", "icon": "➕"}
+    {"id": 45, "term": "Adda", "def": "Cross-staff instrument used in surveying to set out right angles (90 degrees).", "category": "maps", "icon": "➕"},
+    {"id": 46, "term": "Sabik / Haal", "def": "'Sabik' refers to the Previous/Former entry (e.g., old Khasra no). 'Haal' refers to the Current/Present entry.", "category": "records", "icon": "🔄"},
+    {"id": 47, "term": "Badastur", "def": "'As Before'. Used in revenue records to indicate that a status (cultivation/ownership) remains unchanged.", "category": "records", "icon": "⏭️"},
+    {"id": 48, "term": "Kharaba", "def": "Portion of crop that failed due to natural calamity. Recorded in Girdawari to claim relief.", "category": "records", "icon": "🥀"},
+    {"id": 49, "term": "Jinswar", "def": "Crop Return Statement. A statistical return of crops sown in the harvest, sent by Patwari to Tehsildar.", "category": "records", "icon": "📊"},
+    {"id": 50, "term": "Milan Raqba", "def": "Yearly area statement showing total area of village classified by land type.", "category": "records", "icon": "📈"},
+    {"id": 51, "term": "Taccavi", "def": "Agricultural loan given by the Government to farmers during distress.", "category": "records", "icon": "💸"},
+    {"id": 52, "term": "Bartan", "def": "Customary rights of villagers (e.g., Bartan-dari) to take timber/fuel/fodder from forests or Shamlat.", "category": "records", "icon": "🌲"},
+    {"id": 53, "term": "Kurki", "def": "Distraint/Attachment. Legal process of seizing movable property to recover land revenue arrears.", "category": "records", "icon": "🔗"},
+    {"id": 54, "term": "Dastak", "def": "Writ of Demand. A formal notice sent to a defaulter to pay land revenue arrears.", "category": "records", "icon": "📨"},
+    {"id": 55, "term": "Abiana", "def": "Water rate or tax charged for irrigation water supplied by government canals.", "category": "records", "icon": "🌊"},
+    {"id": 56, "term": "Mend / Watt", "def": "Earthen ridge or bund boundary separating two fields.", "category": "maps", "icon": "🧱"},
+    {"id": 57, "term": "Warabandi", "def": "Schedule for rotational distribution of irrigation water among farmers.", "category": "records", "icon": "🕒"},
+    {"id": 58, "term": "Goshwara", "def": "An abstract or summary statement (e.g., Goshwara Mutation - summary of mutations decided).", "category": "records", "icon": "📝"},
+    {"id": 59, "term": "Khudkasht", "def": "Land cultivated personally by the owner (Self-cultivation).", "category": "records", "icon": "🚜"},
+    {"id": 60, "term": "Haqdaran", "def": "Rights Holders. 'Jamabandi' is often called 'Register Haqdaran Zamin'.", "category": "records", "icon": "👥"},
+    {"id": 61, "term": "Bila Laggan", "def": "Rent-Free. Land held by a tenant without paying rent (often for religious service or relation).", "category": "records", "icon": "🆓"}
 ]

@@ -3,14 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Robot No Follow Tag -->
+    <meta name="robots" content="nofollow">
     <title>HP Exam Hub | HPPSC & HPRCA Prep Portal</title>
-    <meta name="description" content="Comprehensive preparation for Himachal Pradesh government exams. specialized modules for Revenue (Patwari), HP GK, Math, & Reasoning. High-yield MCQs and notes.">
+    <!-- OPTIMIZED META DESCRIPTION (Max 160 chars) -->
+    <meta name="description" content="Comprehensive preparation for HP government exams (HPPSC, HPRCA). Specialized modules for Revenue (Patwari), GK, Math & Reasoning. High-yield notes & MCQs.">
     
     <!-- Tailwind CSS (CDN) -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="js/tailwind-global-css.js"></script>
     <!-- Header Footer Script -->
     <script src="js/header-footer.js"></script>
+    <!-- NEW: Global Scripts -->
+    <script src="js/global-scripts.js"></script>
 
     <!-- Font Awesome & Fonts (Inter & Poppins ONLY) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -156,6 +161,7 @@
         document.addEventListener('DOMContentLoaded', () => {
             // Load Shared Header/Footer
             if(window.loadHeaderFooter) {
+                // 'rootPath' is '.' meaning current directory.
                 loadHeaderFooter({ type: 'home', rootPath: '.' });
             }
         });

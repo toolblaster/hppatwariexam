@@ -153,5 +153,30 @@
         "year": "Rules",
         "title": "HP Tenancy & Land Reforms Rules", 
         "details": "<strong>Form LR-V:</strong> Application form for Resumption of land by landowner. <br><strong>Form LR-IX:</strong> Form for conferring proprietary rights on tenants. <br><strong>Rule 38-A:</strong> Procedure/Conditions for Sec 118 permission."
+    },
+    {
+        "year": "1976",
+        "title": "HP Minor Canals Act",
+        "details": "<strong>Scope:</strong> Manages private/state 'Kuhls' (Irrigation Channels). <br><strong>Record of Irrigation:</strong> Prepared by Revenue Officer. <br><strong>Water Mills (Gharats):</strong> Rights and disputes regarding water flow for mills are settled under this."
+    },
+    {
+        "year": "Manual",
+        "title": "HP Settlement Manual",
+        "details": "<strong>Assessment Circles:</strong> Grouping villages with similar soil/climate. <br><strong>Net Assets:</strong> Calculation basis for Land Revenue (Standard is 1/4th of Net Assets). <br><strong>Soil Classification:</strong> Detailed criteria for 'Barani', 'Chahi', 'Khadetar'."
+    },
+    {
+        "year": "2013",
+        "title": "HP Lease Rules",
+        "details": "<strong>Govt Land:</strong> Rules for leasing to Hydro Projects/Industries. <br><strong>Period:</strong> Typically 40 years (Hydro), 99 years (others). <br><strong>Patwari Duty:</strong> Annual verification of lease conditions (Encroachment/Misuse)."
+    },
+    {
+        "year": "Policy",
+        "title": "Landless Allotment Scheme",
+        "details": "<strong>Target:</strong> Families with no house/land. <br><strong>Grant:</strong> 3 Biswa (Rural) / 2 Biswa (Urban) for housing. <br><strong>Condition:</strong> Land cannot be transferred. Patwari identifies available 'Gair Mumkin' or 'Shamlat' land for this."
+    },
+    {
+        "year": "1969",
+        "title": "HP Instruments (Control of Nuisance) Act",
+        "details": "<strong>Relevance:</strong> Often cited in land disputes regarding noise/nuisance affecting agriculture/habitation. <br><strong>Authority:</strong> District Magistrate/SDM. <br><strong>Intersection:</strong> Revenue officers often execute orders."
     }
 ]

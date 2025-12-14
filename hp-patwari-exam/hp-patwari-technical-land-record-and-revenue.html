@@ -239,6 +239,13 @@
         let toolsData = [];
         // Removed quiz variables
 
+        const quizFiles = {
+            'intro': '../patwari-json-data/71_mcq_basic_phase_hp_revenue.json',
+            'core': '../patwari-json-data/100_mcq_hp_land_records_surveying_and_revenue_acts.json',
+            'advanced': '../patwari-json-data/100_mcq_advanced_legal_and_numerical.json',
+            'consolidation': '../patwari-json-data/50_mcq_final_phase_consolidation_schemes.json'
+        };
+
         async function fetchData(url) {
             const response = await fetch(url);
             if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);

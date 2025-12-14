@@ -28,6 +28,15 @@
     
     <style>
         .font-hindi { font-family: 'Noto Sans Devanagari', sans-serif; }
+        /* Simple fade animation for toast */
+        @keyframes fadeOut {
+            0% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+        .toast-visible {
+            animation: fadeOut 3s forwards;
+        }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased flex flex-col min-h-screen font-sans">
@@ -43,115 +52,267 @@
             <h1 class="text-2xl md:text-3xl font-extrabold font-heading mb-2 leading-tight">
                 <span class="gradient-text">HP Patwari Mock Test 1</span>
             </h1>
-            <p class="text-xs md:text-sm text-slate-500 max-w-2xl font-sans">
+            <p class="text-xs md:text-sm text-slate-500 max-w-2xl font-sans mb-1">
                 Specialized MCQ bank covering Land Records, Revenue Acts, and Mensuration logic. Essential practice for HP Revenue Department exams.
+            </p>
+            <!-- NEW: Mock Description Line -->
+            <p class="text-xs font-bold text-blue-600 font-sans bg-blue-50 inline-block px-2 py-1 rounded border border-blue-100">
+                <i class="fa-solid fa-graduation-cap mr-1"></i> This is a comprehensive Mock cum Revision test designed with high-yield MCQs.
             </p>
         </div>
     </header>
 
     <!-- Main Content -->
-    <!-- REMOVED: pt-[95px] to reduce space. Changed to pt-6 for standard spacing -->
     <main class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 pt-6 pb-8 flex-grow">
         
-        <div id="app-content" class="max-w-5xl mx-auto">
+        <div id="app-content" class="max-w-6xl mx-auto">
             
-            <!-- MODULE 5: QUIZ (Moved from Technical Page) -->
-            <section id="quiz" class="border border-slate-300 rounded-2xl p-4 md:p-6 bg-white shadow-sm">
-                <div class="bg-slate-900 rounded-xl p-3 md:p-6 shadow-2xl relative overflow-hidden">
-                    <div class="relative z-10 grid lg:grid-cols-12 gap-4 md:gap-6">
-                        <!-- Controls -->
-                        <div class="lg:col-span-4 space-y-3 md:space-y-4 text-center md:text-left">
-                            <div>
-                                <h2 class="text-lg md:text-xl font-bold text-white font-heading">Question Bank</h2>
-                                <p class="text-[10px] md:text-xs text-slate-400 mt-1 font-sans">Select a topic to start practicing.</p>
-                            </div>
+            <!-- 1. SYLLABUS COVERAGE -->
+            <section class="mb-8 animate-fade-in-up">
+                <!-- Centered Heading with Line -->
+                <div class="flex flex-col items-center mb-6">
+                    <div class="flex items-center gap-2 mb-2">
+                        <i class="fa-solid fa-list-check text-blue-600"></i>
+                        <h2 class="text-sm font-bold uppercase tracking-wider text-slate-700 font-heading">Topics Covered in this Mock Test</h2>
+                    </div>
+                    <div class="h-px w-32 bg-slate-300 rounded-full"></div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    
+                    <!-- Phase 1: Foundation (Border 300, 1px) -->
+                    <div class="bg-white rounded-xl p-4 border border-green-300 shadow-sm relative overflow-hidden group hover:shadow-md transition hover:-translate-y-1">
+                        <div class="absolute top-0 right-0 w-16 h-16 bg-green-50 rounded-bl-full -mr-4 -mt-4 z-0 transition-transform group-hover:scale-110"></div>
+                        <h3 class="font-heading font-bold text-slate-800 mb-2 relative z-10 flex items-center gap-2 text-sm">
+                            <span class="w-2 h-2 rounded-full bg-green-500"></span>
+                            Foundation & Basics
+                        </h3>
+                        <p class="text-[10px] text-slate-400 mb-2 font-bold uppercase tracking-wide relative z-10">~100 MCQs</p>
+                        <ul class="space-y-2 text-[11px] text-slate-600 font-sans relative z-10 leading-snug">
+                            <li class="flex gap-2 items-start">
+                                <i class="fa-solid fa-check text-green-500 mt-0.5 text-[10px]"></i>
+                                <span><strong>Docs:</strong> Jamabandi, Khasra, Intkaal, Mussavi, Latha maps.</span>
+                            </li>
+                            <li class="flex gap-2 items-start">
+                                <i class="fa-solid fa-check text-green-500 mt-0.5 text-[10px]"></i>
+                                <span><strong>Units:</strong> Bigha, Biswa, Karam (57"), Acre, Chahi/Barani types.</span>
+                            </li>
+                             <li class="flex gap-2 items-start">
+                                <i class="fa-solid fa-check text-green-500 mt-0.5 text-[10px]"></i>
+                                <span><strong>System:</strong> Hierarchy (Patwari to FC), Lambardar, PM-KISAN.</span>
+                            </li>
+                        </ul>
+                    </div>
 
-                            <label for="quiz-selector" class="sr-only">Select Quiz Module</label>
-                            <select id="quiz-selector" onchange="switchQuiz(this.value)" class="w-full bg-slate-800 text-white text-[11px] md:text-xs font-bold p-2 md:p-2.5 rounded border border-slate-700 focus:border-blue-500 outline-none font-sans text-center md:text-left">
+                    <!-- Phase 2: Advanced (Border 300, 1px) -->
+                    <div class="bg-white rounded-xl p-4 border border-blue-300 shadow-sm relative overflow-hidden group hover:shadow-md transition hover:-translate-y-1">
+                        <div class="absolute top-0 right-0 w-16 h-16 bg-blue-50 rounded-bl-full -mr-4 -mt-4 z-0 transition-transform group-hover:scale-110"></div>
+                        <h3 class="font-heading font-bold text-slate-800 mb-2 relative z-10 flex items-center gap-2 text-sm">
+                            <span class="w-2 h-2 rounded-full bg-blue-500"></span>
+                            Legal & Numerical
+                        </h3>
+                        <p class="text-[10px] text-slate-400 mb-2 font-bold uppercase tracking-wide relative z-10">~100 MCQs</p>
+                        <ul class="space-y-2 text-[11px] text-slate-600 font-sans relative z-10 leading-snug">
+                            <li class="flex gap-2 items-start">
+                                <i class="fa-solid fa-check text-blue-500 mt-0.5 text-[10px]"></i>
+                                <span><strong>Survey:</strong> Area math, Scales, Chains (Gunter), Triangulation.</span>
+                            </li>
+                            <li class="flex gap-2 items-start">
+                                <i class="fa-solid fa-check text-blue-500 mt-0.5 text-[10px]"></i>
+                                <span><strong>Acts:</strong> Sec 118, Encroachment (163), Partition, Appeals.</span>
+                            </li>
+                             <li class="flex gap-2 items-start">
+                                <i class="fa-solid fa-check text-blue-500 mt-0.5 text-[10px]"></i>
+                                <span><strong>Deep Records:</strong> Tatima, Wajib-ul-Arz, Lal Syahi, Min Nos.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Phase 3: Schemes (Border 300, 1px) -->
+                    <div class="bg-white rounded-xl p-4 border border-purple-300 shadow-sm relative overflow-hidden group hover:shadow-md transition hover:-translate-y-1">
+                        <div class="absolute top-0 right-0 w-16 h-16 bg-purple-50 rounded-bl-full -mr-4 -mt-4 z-0 transition-transform group-hover:scale-110"></div>
+                        <h3 class="font-heading font-bold text-slate-800 mb-2 relative z-10 flex items-center gap-2 text-sm">
+                            <span class="w-2 h-2 rounded-full bg-purple-500"></span>
+                            Schemes & Minor Acts
+                        </h3>
+                        <p class="text-[10px] text-slate-400 mb-2 font-bold uppercase tracking-wide relative z-10">~50 MCQs</p>
+                        <ul class="space-y-2 text-[11px] text-slate-600 font-sans relative z-10 leading-snug">
+                            <li class="flex gap-2 items-start">
+                                <i class="fa-solid fa-check text-purple-500 mt-0.5 text-[10px]"></i>
+                                <span><strong>Acts:</strong> Consolidation (Chakbandi), Ceiling Act, Shamlat.</span>
+                            </li>
+                            <li class="flex gap-2 items-start">
+                                <i class="fa-solid fa-check text-purple-500 mt-0.5 text-[10px]"></i>
+                                <span><strong>Rights:</strong> Bartan/Tirni, PESA (Tribal), Nautor Rules.</span>
+                            </li>
+                             <li class="flex gap-2 items-start">
+                                <i class="fa-solid fa-check text-purple-500 mt-0.5 text-[10px]"></i>
+                                <span><strong>Schemes:</strong> Solar Fencing, Fasal Bima, E-District.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- 2. EXAM CONSOLE / DASHBOARD -->
+            <section id="exam-dashboard" class="mb-6 bg-slate-900 rounded-xl p-4 md:p-5 shadow-lg relative overflow-hidden">
+                <!-- Background Decoration -->
+                <div class="absolute top-0 right-0 -mt-10 -mr-10 w-40 h-40 bg-blue-500 rounded-full blur-3xl opacity-20 pointer-events-none"></div>
+                <div class="absolute bottom-0 left-0 -mb-10 -ml-10 w-40 h-40 bg-purple-500 rounded-full blur-3xl opacity-20 pointer-events-none"></div>
+
+                <div class="relative z-10 flex flex-col md:flex-row gap-4 items-center justify-between">
+                    
+                    <!-- Left: Selector -->
+                    <div class="w-full md:w-1/4 space-y-1.5">
+                        <label for="quiz-selector" class="text-[9px] font-bold text-slate-400 uppercase tracking-wider block">Module Selector</label>
+                        <div class="relative">
+                            <select id="quiz-selector" onchange="switchQuiz(this.value)" class="w-full bg-slate-800 text-white text-xs font-bold p-2.5 rounded-lg border border-slate-700 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none font-sans appearance-none cursor-pointer hover:border-slate-600 transition shadow-sm">
                                 <option value="intro">Intro: Exam Traps</option>
                                 <option value="core">Core: Land Records</option>
                                 <option value="advanced">Adv: Legal/Numerical</option>
                                 <option value="consolidation">Spl: Consolidation</option>
                             </select>
-
-                            <div class="flex items-center justify-between bg-slate-800/50 p-2 md:p-3 rounded-lg border border-slate-700/50">
-                                <div class="text-center md:text-left">
-                                    <div class="text-[9px] md:text-[10px] text-slate-400 uppercase font-bold font-sans">Score</div>
-                                    <div class="text-lg md:text-xl font-bold text-white font-heading" id="score-display">0</div>
-                                </div>
-                                <div class="text-center md:text-right">
-                                    <div class="text-[9px] md:text-[10px] text-slate-400 uppercase font-bold font-sans">Total</div>
-                                    <div class="text-lg md:text-xl font-bold text-white font-heading" id="q-count-display">0</div>
-                                </div>
+                            <div class="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-slate-400">
+                                <i class="fa-solid fa-chevron-down text-[10px]"></i>
                             </div>
+                        </div>
+                    </div>
+
+                    <!-- Middle: Stats (Right / Wrong / Remaining / Total) -->
+                    <div class="flex gap-2 w-full md:w-auto overflow-x-auto pb-1 md:pb-0 justify-center">
+                        <!-- Right -->
+                        <div class="bg-slate-800/80 p-2 px-3 rounded-lg border border-slate-700 flex-1 md:flex-none text-center min-w-[70px]">
+                            <div class="text-[9px] text-green-400 uppercase font-bold font-sans mb-0.5"><i class="fa-solid fa-check mr-1"></i>Right</div>
+                            <div class="text-xl font-bold text-white font-heading" id="right-display">0</div>
+                        </div>
+                        <!-- Wrong -->
+                        <div class="bg-slate-800/80 p-2 px-3 rounded-lg border border-slate-700 flex-1 md:flex-none text-center min-w-[70px]">
+                            <div class="text-[9px] text-red-400 uppercase font-bold font-sans mb-0.5"><i class="fa-solid fa-xmark mr-1"></i>Wrong</div>
+                            <div class="text-xl font-bold text-white font-heading" id="wrong-display">0</div>
+                        </div>
+                        <!-- Remaining -->
+                        <div class="bg-slate-800/80 p-2 px-3 rounded-lg border border-slate-700 flex-1 md:flex-none text-center min-w-[70px]">
+                            <div class="text-[9px] text-yellow-400 uppercase font-bold font-sans mb-0.5"><i class="fa-solid fa-hourglass-half mr-1"></i>Left</div>
+                            <div class="text-xl font-bold text-white font-heading" id="remaining-display">0</div>
+                        </div>
+                        <!-- Total -->
+                        <div class="bg-slate-800/80 p-2 px-3 rounded-lg border border-slate-700 flex-1 md:flex-none text-center min-w-[70px]">
+                            <div class="text-[9px] text-slate-400 uppercase font-bold font-sans mb-0.5">Total</div>
+                            <div class="text-xl font-bold text-blue-400 font-heading" id="q-count-display">0</div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Actions & Navigator -->
+                    <div class="flex flex-col gap-2 w-full md:w-auto items-end relative">
+                        
+                        <!-- Actions Row -->
+                        <div class="flex gap-2 w-full justify-end">
+                            <button onclick="resetCurrentProgress()" class="flex-1 md:flex-none py-1.5 px-3 rounded-lg border border-red-500/30 text-red-400 text-[10px] font-bold hover:bg-red-900/20 transition flex items-center justify-center gap-2 group whitespace-nowrap">
+                                <i class="fa-solid fa-rotate-right group-hover:rotate-180 transition-transform duration-500"></i> Reset
+                            </button>
                             
-                            <!-- Reset Button -->
-                            <div class="text-center md:text-left">
-                                <button onclick="resetCurrentProgress()" class="text-[10px] font-bold text-red-400 hover:text-red-300 transition underline decoration-dotted">
-                                    <i class="fa-solid fa-trash-can mr-1"></i> Reset Progress
-                                </button>
-                            </div>
+                            <a href="../hp-technical-land-record-and-revenue.html" class="flex-1 md:flex-none py-1.5 px-3 rounded-lg border border-slate-700 text-slate-400 text-[10px] font-bold hover:bg-slate-800 hover:text-white transition flex items-center justify-center gap-2 group whitespace-nowrap">
+                                <i class="fa-solid fa-arrow-left group-hover:-translate-x-1 transition-transform"></i> Notes
+                            </a>
+                        </div>
 
-                            <div class="mt-4 pt-4 border-t border-slate-800 text-center md:text-left">
-                                <!-- UPDATED LINK: Goes UP two levels to root, then down to technical page -->
-                                <a href="../hp-technical-land-record-and-revenue.html" class="inline-flex items-center gap-2 text-[10px] font-bold text-slate-400 hover:text-white transition">
-                                    <i class="fa-solid fa-arrow-left"></i> Back to Study Notes
-                                </a>
+                        <!-- NEW: Jump to Question with Tooltip -->
+                        <div class="flex gap-2 items-center w-full justify-end relative">
+                            <div id="jump-tooltip" class="hidden absolute bottom-full right-0 mb-2 w-48 p-2 bg-red-600 text-white text-[10px] font-bold rounded shadow-lg z-20 text-center pointer-events-none after:content-[''] after:absolute after:top-full after:right-6 after:border-8 after:border-transparent after:border-t-red-600">
+                                You can only jump to previously viewed questions!
+                            </div>
+                            <span class="text-[10px] text-slate-400 font-bold uppercase tracking-wider hidden sm:block">Jump to Q:</span>
+                            <input type="number" id="jump-to-input" placeholder="#" class="w-12 bg-slate-800 border border-slate-600 text-white text-xs p-1.5 rounded text-center outline-none focus:border-blue-500" min="1">
+                            <button onclick="jumpToQuestion()" class="py-1.5 px-3 bg-blue-600 text-white text-[10px] font-bold rounded hover:bg-blue-700 transition">Go</button>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. STANDALONE QUIZ BOX (ULTRA COMPACT) -->
+            <section id="quiz" class="scroll-mt-24 max-w-4xl mx-auto">
+                <div class="bg-white rounded-lg shadow-xl border border-slate-300 relative overflow-hidden min-h-[400px] flex flex-col transition-all duration-300">
+                    
+                    <!-- Loader Overlay -->
+                    <div id="quiz-loader" class="hidden absolute inset-0 bg-white/90 backdrop-blur-sm z-30 flex flex-col items-center justify-center transition-opacity">
+                        <div class="w-8 h-8 border-2 border-blue-100 border-t-blue-600 rounded-full animate-spin mb-2"></div>
+                        <span class="text-xs font-bold text-slate-500 animate-pulse">Loading Question...</span>
+                    </div>
+
+                    <!-- Result Overlay (Compact) -->
+                    <div id="result-area" class="hidden absolute inset-0 bg-white z-20 flex-col items-center justify-center p-6 text-center animate-fade-in">
+                        <div class="w-12 h-12 bg-yellow-50 text-yellow-500 rounded-full flex items-center justify-center text-xl mb-3 shadow-sm border border-yellow-100">
+                            <i class="fa-solid fa-trophy"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-1 font-heading">Module Complete!</h3>
+                        <p class="text-xs text-slate-500 mb-4 font-sans">You've finished this section.</p>
+                        <div class="mb-4 p-3 bg-slate-50 rounded-lg border border-slate-200 w-full max-w-xs mx-auto">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-xs text-green-600 font-bold">Right</span>
+                                <span id="final-right" class="text-sm font-bold text-slate-900">0</span>
+                            </div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-xs text-red-500 font-bold">Wrong</span>
+                                <span id="final-wrong" class="text-sm font-bold text-slate-900">0</span>
+                            </div>
+                            <div class="h-px bg-slate-200 my-2"></div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-xs text-slate-500 font-bold">Total Score</span>
+                                <span id="final-score" class="text-lg font-extrabold text-blue-600">0</span>
+                            </div>
+                        </div>
+                        <button onclick="resetQuiz()" class="px-5 py-2 bg-blue-600 text-white text-xs font-bold rounded-lg hover:bg-blue-700 transition shadow-md transform hover:-translate-y-0.5 active:translate-y-0">
+                            Restart Quiz
+                        </button>
+                    </div>
+
+                    <!-- Active Question Content -->
+                    <div id="question-area" class="flex flex-col flex-grow p-4 md:p-6">
+                        
+                        <!-- Header: Meta Info & Progress -->
+                        <div class="flex justify-between items-center mb-4 pb-3 border-b border-slate-100">
+                            <div class="flex items-center gap-2">
+                                <span class="bg-blue-50 text-blue-700 text-[10px] font-bold px-2 py-0.5 rounded border border-blue-200 font-heading">Q <span id="q-number">1</span></span>
+                            </div>
+                            <div class="flex items-center gap-2 w-1/3">
+                                <div class="flex-grow h-1.5 bg-slate-100 rounded-full overflow-hidden">
+                                    <div id="progress-bar" class="h-full bg-blue-500 w-0 transition-all duration-300 ease-out"></div>
+                                </div>
                             </div>
                         </div>
 
-                        <!-- Question Area -->
-                        <!-- FIX: Reduced height to h-[480px] md:h-[520px] for a denser, more compact look while remaining static. Added max-w-3xl to squeeze horizontally. -->
-                        <div class="lg:col-span-8 bg-white rounded-lg p-3 md:p-4 h-[480px] md:h-[520px] flex flex-col relative shadow-sm border border-slate-200 mx-auto w-full max-w-3xl">
-                            <div id="quiz-loader" class="hidden absolute inset-0 bg-white z-20 flex flex-col items-center justify-center rounded-lg">
-                                <i class="fa-solid fa-circle-notch fa-spin text-2xl text-blue-600" aria-hidden="true"></i>
-                            </div>
-
-                            <div id="question-area" class="flex flex-col h-full">
-                                <!-- Top Bar: Q Number & Progress (Compact MB) -->
-                                <div class="flex justify-between items-center mb-2 flex-shrink-0">
-                                    <span class="text-[10px] font-bold text-blue-600 uppercase bg-blue-50 px-2 py-0.5 rounded font-sans">Q <span id="q-number">1</span></span>
-                                    <div class="h-1 w-20 bg-slate-100 rounded-full overflow-hidden">
-                                        <div id="progress-bar" class="h-full bg-blue-500 w-0 transition-all duration-300"></div>
-                                    </div>
-                                </div>
-                                
-                                <!-- Scrollable Question Content Area -->
-                                <div class="flex-grow overflow-y-auto pr-2 custom-scrollbar">
-                                    <div class="mb-3">
-                                        <h3 id="q-text" class="text-xs md:text-sm font-bold text-slate-900 leading-snug font-heading">Loading...</h3>
-                                        <!-- Container for Hindi Question -->
-                                        <h3 id="q-text-hi" class="text-xs md:text-sm font-bold text-slate-700 leading-snug font-hindi mt-1.5 hidden border-t border-slate-100 pt-1.5"></h3>
-                                    </div>
-                                    
-                                    <!-- Dense Options Area -->
-                                    <div id="options-area" class="space-y-1.5 font-sans text-[11px] md:text-sm pb-2"></div>
-
-                                    <div id="feedback-area" class="mt-2 hidden p-2 rounded text-[10px] md:text-[11px] font-medium border-l-2 font-sans mb-1"></div>
-                                </div>
-                                
-                                <!-- Bottom Bar: Navigation Buttons (Compact Top Border) -->
-                                <div class="mt-2 pt-2 border-t border-slate-100 flex justify-between items-center flex-shrink-0">
-                                    <button id="prev-btn" class="invisible px-3 py-1.5 bg-slate-100 text-slate-600 text-[10px] md:text-xs font-bold rounded hover:bg-slate-200 transition font-sans">
-                                        <i class="fa-solid fa-arrow-left mr-1" aria-hidden="true"></i> Prev
-                                    </button>
-                                    <button id="next-btn" class="hidden px-4 py-1.5 bg-slate-900 text-white text-[10px] md:text-xs font-bold rounded hover:bg-slate-800 transition font-sans shadow-md">
-                                        Next <i class="fa-solid fa-arrow-right ml-1" aria-hidden="true"></i>
-                                    </button>
-                                </div>
-                            </div>
-
-                            <div id="result-area" class="hidden absolute inset-0 bg-white z-10 flex-col items-center justify-center rounded-lg text-center p-6">
-                                <div class="w-16 h-16 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center text-2xl mb-4 shadow-sm">
-                                    <i class="fa-solid fa-trophy"></i>
-                                </div>
-                                <h3 class="text-lg font-bold text-slate-900 mb-2 font-heading">Module Complete!</h3>
-                                <p class="text-xs text-slate-500 mb-6 font-sans">You scored <span id="final-score" class="font-bold text-slate-900 text-base"></span></p>
-                                <button onclick="resetQuiz()" class="px-6 py-2.5 bg-blue-600 text-white text-xs font-bold rounded-lg hover:bg-blue-700 transition font-sans shadow-md hover:shadow-lg transform active:scale-95">
-                                    Restart Quiz
-                                </button>
+                        <!-- Question Text (Compact) -->
+                        <div class="mb-4">
+                            <h3 id="q-text" class="text-sm font-bold text-slate-900 leading-snug font-heading">...</h3>
+                            <!-- Hindi Translation Container -->
+                            <div id="q-text-hi-container" class="hidden mt-1.5 pl-3 border-l-2 border-orange-200">
+                                <h3 id="q-text-hi" class="text-xs font-medium text-slate-600 font-hindi leading-snug">...</h3>
                             </div>
                         </div>
+
+                        <!-- Options Grid (2 Columns, Tight Spacing) -->
+                        <div id="options-area" class="grid grid-cols-1 md:grid-cols-2 gap-2.5 mb-4">
+                            <!-- JS injects buttons here -->
+                        </div>
+
+                        <!-- Feedback Section (Collapsible/Inline) -->
+                        <div id="feedback-area" class="hidden mb-4 rounded-lg border-l-4 p-3 text-xs animate-fade-in-up shadow-sm">
+                            <!-- JS injects feedback -->
+                        </div>
+
+                        <!-- Footer Navigation -->
+                        <div class="mt-auto pt-3 flex justify-between items-center border-t border-slate-100">
+                            <button id="prev-btn" class="invisible flex items-center gap-1.5 px-3 py-1.5 text-slate-500 font-bold text-[10px] hover:bg-slate-50 rounded transition hover:text-slate-800">
+                                <i class="fa-solid fa-arrow-left"></i> Previous
+                            </button>
+                            
+                            <button id="next-btn" class="hidden flex items-center gap-1.5 px-5 py-2 bg-slate-900 text-white font-bold text-[10px] rounded hover:bg-slate-800 transition shadow-sm active:scale-95 uppercase tracking-wide">
+                                Next <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+
                     </div>
                 </div>
             </section>
@@ -168,6 +329,7 @@
         let score = 0;
         let currentTopic = 'intro';
         let userAnswers = {}; // { questionId: { selected: index, isCorrect: bool } }
+        let maxReachedQ = 0; // Track max question reached
 
         // UPDATED PATHS for fetch to ../../patwari-json-data/
         const quizFiles = {
@@ -182,10 +344,15 @@
 
         function saveProgress() {
             const allProgress = JSON.parse(localStorage.getItem(StorageKey)) || {};
+            
+            // Update max reached question logic
+            if (currentQ > maxReachedQ) maxReachedQ = currentQ;
+
             allProgress[currentTopic] = {
                 currentQ: currentQ,
                 score: score,
-                answers: userAnswers
+                answers: userAnswers,
+                maxReachedQ: maxReachedQ // Save this to persist state
             };
             localStorage.setItem(StorageKey, JSON.stringify(allProgress));
         }
@@ -213,6 +380,37 @@
             return await response.json();
         }
 
+        // NEW: Updates the Scoreboard (Right/Wrong/Remaining/Total)
+        function updateStats() {
+            let right = 0;
+            let wrong = 0;
+            // Iterate over userAnswers to count right/wrong
+            Object.values(userAnswers).forEach(ans => {
+                if (ans.isCorrect) right++;
+                else wrong++;
+            });
+            
+            const total = quizQuestions.length;
+            const remaining = total - (right + wrong);
+
+            // Update Dashboard
+            const rightDisplay = document.getElementById('right-display');
+            const wrongDisplay = document.getElementById('wrong-display');
+            const remainingDisplay = document.getElementById('remaining-display');
+            const qCountDisplay = document.getElementById('q-count-display');
+            const finalRight = document.getElementById('final-right');
+            const finalWrong = document.getElementById('final-wrong');
+
+            if(rightDisplay) rightDisplay.innerText = right;
+            if(wrongDisplay) wrongDisplay.innerText = wrong;
+            if(remainingDisplay) remainingDisplay.innerText = remaining >= 0 ? remaining : 0;
+            if(qCountDisplay) qCountDisplay.innerText = total;
+            
+            // Also update Result Screen Stats if visible
+            if(finalRight) finalRight.innerText = right;
+            if(finalWrong) finalWrong.innerText = wrong;
+        }
+
         async function switchQuiz(topic) {
             const loader = document.getElementById('quiz-loader');
             const qArea = document.getElementById('question-area');
@@ -237,14 +435,18 @@
                     currentQ = savedState.currentQ || 0;
                     score = savedState.score || 0;
                     userAnswers = savedState.answers || {};
+                    maxReachedQ = savedState.maxReachedQ || 0;
                 } else {
                     currentQ = 0;
                     score = 0;
                     userAnswers = {};
+                    maxReachedQ = 0;
                 }
 
                 document.getElementById('q-count-display').innerText = quizQuestions.length;
-                document.getElementById('score-display').innerText = score;
+                
+                // Init stats
+                updateStats();
                 
                 setTimeout(() => {
                     loader.classList.add('hidden');
@@ -265,10 +467,15 @@
                 resultArea.classList.remove('hidden');
                 resultArea.classList.add('flex'); // Add flex to center content
                 document.getElementById('final-score').innerText = `${score} / ${quizQuestions.length}`;
+                // Update final stats breakdown
+                updateStats();
                 return;
             }
 
             const q = quizQuestions[currentQ];
+            // Update max reached logic if user navigates forward naturally
+            if(currentQ > maxReachedQ) maxReachedQ = currentQ;
+
             // Normalize question text property (some files use q, some q_en)
             const questionText = q.q || q.q_en;
             // Get Hindi question text if available
@@ -284,11 +491,13 @@
             
             // Handle Hindi Question Display
             const qTextHiEl = document.getElementById('q-text-hi');
+            const qTextHiContainer = document.getElementById('q-text-hi-container');
+            
             if (questionTextHi) {
                 qTextHiEl.innerText = questionTextHi;
-                qTextHiEl.classList.remove('hidden');
+                qTextHiContainer.classList.remove('hidden');
             } else {
-                qTextHiEl.classList.add('hidden');
+                qTextHiContainer.classList.add('hidden');
             }
             
             const progressPct = ((currentQ) / quizQuestions.length) * 100;
@@ -319,13 +528,20 @@
             
             options.forEach((opt, idx) => {
                 const btn = document.createElement('button');
-                btn.className = "w-full text-left p-3 md:p-3.5 rounded-xl border-2 border-slate-100 hover:border-blue-200 hover:bg-blue-50 transition text-slate-700 font-medium relative group text-xs md:text-sm";
+                // Updated Button Styles for Card Look
+                // Reduced padding (p-4 -> p-2.5) and text size (text-xs/sm -> text-[11px])
+                btn.className = "w-full text-left p-2.5 rounded border border-slate-400 hover:border-blue-400 hover:bg-blue-50 transition-all duration-100 text-slate-700 font-medium relative group text-[11px] md:text-xs flex flex-col justify-center h-full shadow-sm bg-slate-50/50";
                 
                 // Construct Option HTML (Bilingual if available)
-                let optionContent = `<div class="flex gap-3"><span class="flex-shrink-0 inline-flex items-center justify-center w-5 h-5 rounded-full bg-slate-100 text-slate-500 text-[10px] font-bold group-hover:bg-blue-100 group-hover:text-blue-600 transition">${String.fromCharCode(65+idx)}</span> <span>${opt}</span></div>`;
+                // Reduced icon size and margins
+                let optionContent = `<div class="flex gap-2 items-center w-full">
+                    <span class="flex-shrink-0 inline-flex items-center justify-center w-4 h-4 rounded-sm bg-slate-200 text-slate-600 text-[9px] font-bold group-hover:bg-blue-600 group-hover:text-white transition border border-slate-400">${String.fromCharCode(65+idx)}</span> 
+                    <span class="leading-snug flex-grow">${opt}</span>
+                </div>`;
                 
                 if (optionsHi && optionsHi[idx]) {
-                    optionContent += `<div class="mt-1 ml-8 text-slate-600 font-hindi text-xs border-t border-slate-50 pt-1">${optionsHi[idx]}</div>`;
+                    // Reduced margins and text size for Hindi option
+                    optionContent += `<div class="mt-1 ml-6 text-slate-500 font-hindi text-[10px] border-t border-slate-300 pt-0.5 leading-snug">${optionsHi[idx]}</div>`;
                 }
                 
                 btn.innerHTML = optionContent;
@@ -336,17 +552,23 @@
                     btn.classList.add('cursor-not-allowed', 'opacity-70');
                     // Highlight selected
                     if (idx === alreadyAnswered.selected) {
-                        btn.classList.remove('border-slate-100', 'hover:border-blue-200', 'hover:bg-blue-50');
+                        btn.classList.remove('border-slate-400', 'hover:border-blue-400', 'hover:bg-blue-50');
                         if (alreadyAnswered.isCorrect) {
                             btn.classList.add('bg-green-50', 'border-green-500', 'text-green-800');
+                            // Add checkmark if correct
+                            btn.querySelector('.flex').insertAdjacentHTML('beforeend', '<i class="fa-solid fa-check text-green-600 ml-auto"></i>');
                         } else {
                             btn.classList.add('bg-red-50', 'border-red-500', 'text-red-800');
+                            // Add cross if incorrect
+                            btn.querySelector('.flex').insertAdjacentHTML('beforeend', '<i class="fa-solid fa-xmark text-red-600 ml-auto"></i>');
                         }
                     }
                     // Always show correct answer if wrong was selected
                     if (!alreadyAnswered.isCorrect && idx === q.correct) {
-                        btn.classList.remove('border-slate-100', 'opacity-70');
-                        btn.classList.add('bg-green-50', 'border-green-400', 'text-green-700');
+                        btn.classList.remove('border-slate-400', 'opacity-70');
+                        btn.classList.add('bg-green-50', 'border-green-500', 'text-green-800');
+                        // Add checkmark to the correct answer
+                        btn.querySelector('.flex').insertAdjacentHTML('beforeend', '<i class="fa-solid fa-check text-green-600 ml-auto"></i>');
                     }
                 } else {
                     btn.onclick = () => checkAnswer(idx, btn, q);
@@ -357,10 +579,6 @@
 
             // If answered, show feedback and next button
             if (alreadyAnswered) {
-                // If explanation is available in Hindi (q.explanation_hi), we could show that too, 
-                // but currently JSONs only seem to have 'explanation'.
-                // If we want to show Hindi question in feedback for context, we can.
-                // For now, let's keep explanation as is.
                 showFeedback(alreadyAnswered.isCorrect, q.explanation, q.q_hi);
                 nextBtn.classList.remove('hidden');
             } else {
@@ -381,7 +599,7 @@
             // Update State
             if (isCorrect) {
                 score++;
-                document.getElementById('score-display').innerText = score;
+                // document.getElementById('score-display').innerText = score; // OLD WAY
             }
             
             // Save to memory & LocalStorage
@@ -389,20 +607,27 @@
                 selected: selectedIdx,
                 isCorrect: isCorrect
             };
+            
+            // UPDATE DASHBOARD STATS INSTANTLY
+            updateStats();
+            
             saveProgress();
 
-            // UI Feedback
+            // UI Feedback (Styling Buttons)
             if (isCorrect) {
-                btn.classList.remove('border-slate-100', 'hover:border-blue-200', 'hover:bg-blue-50');
+                btn.classList.remove('border-slate-400', 'hover:border-blue-400', 'hover:bg-blue-50');
                 btn.classList.add('bg-green-50', 'border-green-500', 'text-green-800');
+                btn.querySelector('.flex').insertAdjacentHTML('beforeend', '<i class="fa-solid fa-check text-green-600 ml-auto"></i>');
             } else {
-                btn.classList.remove('border-slate-100', 'hover:border-blue-200', 'hover:bg-blue-50');
+                btn.classList.remove('border-slate-400', 'hover:border-blue-400', 'hover:bg-blue-50');
                 btn.classList.add('bg-red-50', 'border-red-500', 'text-red-800');
+                btn.querySelector('.flex').insertAdjacentHTML('beforeend', '<i class="fa-solid fa-xmark text-red-600 ml-auto"></i>');
                 
                 // Highlight correct one
                 const correctBtn = buttons[q.correct];
-                correctBtn.classList.remove('opacity-70', 'border-slate-100');
-                correctBtn.classList.add('bg-green-50', 'border-green-400', 'text-green-700');
+                correctBtn.classList.remove('opacity-70', 'border-slate-400');
+                correctBtn.classList.add('bg-green-50', 'border-green-500', 'text-green-800');
+                correctBtn.querySelector('.flex').insertAdjacentHTML('beforeend', '<i class="fa-solid fa-check text-green-600 ml-auto"></i>');
             }
 
             showFeedback(isCorrect, q.explanation, q.q_hi);
@@ -413,20 +638,69 @@
             const feedback = document.getElementById('feedback-area');
             feedback.classList.remove('hidden');
             
+            // Reduced margins and text size for feedback box
             if (isCorrect) {
-                feedback.className = "mt-3 md:mt-6 p-3 md:p-4 rounded-xl text-sm font-medium border-l-4 bg-green-50 text-green-800 border-green-500";
-                feedback.innerHTML = `<div class="flex items-start gap-3"><i class="fa-solid fa-check-circle text-lg mt-0.5" aria-hidden="true"></i><div><strong>Correct!</strong><p class="mt-1 opacity-90">${explanation}</p></div></div>`;
+                feedback.className = "mb-2 rounded-lg border-l-4 p-3 text-xs animate-fade-in-up shadow-sm bg-green-50 text-green-800 border-green-500";
+                feedback.innerHTML = `<div class="flex items-start gap-2"><div class="mt-0.5 w-4 h-4 bg-green-200 text-green-700 rounded-full flex items-center justify-center flex-shrink-0 text-[8px]"><i class="fa-solid fa-check"></i></div><div><strong class="font-heading text-xs">Correct!</strong><p class="mt-0.5 opacity-90 leading-snug font-sans">${explanation}</p></div></div>`;
             } else {
-                feedback.className = "mt-3 md:mt-6 p-3 md:p-4 rounded-xl text-sm font-medium border-l-4 bg-red-50 text-red-800 border-red-500";
-                // If question was hindi, maybe show translation of explanation? 
-                // Currently only standard explanation available.
-                feedback.innerHTML = `<div class="flex items-start gap-3"><i class="fa-solid fa-xmark-circle text-lg mt-0.5" aria-hidden="true"></i><div><strong>Incorrect.</strong><p class="mt-1 opacity-90">${explanation}</p></div></div>`;
+                feedback.className = "mb-2 rounded-lg border-l-4 p-3 text-xs animate-fade-in-up shadow-sm bg-red-50 text-red-800 border-red-500";
+                feedback.innerHTML = `<div class="flex items-start gap-2"><div class="mt-0.5 w-4 h-4 bg-red-200 text-red-700 rounded-full flex items-center justify-center flex-shrink-0 text-[8px]"><i class="fa-solid fa-xmark"></i></div><div><strong class="font-heading text-xs">Incorrect.</strong><p class="mt-0.5 opacity-90 leading-snug font-sans">${explanation}</p></div></div>`;
             }
+        }
+
+        // NEW: Jump to specific question functionality
+        function jumpToQuestion() {
+            const input = document.getElementById('jump-to-input');
+            const qNum = parseInt(input.value);
+            
+            if (isNaN(qNum) || qNum < 1 || qNum > quizQuestions.length) {
+                alert(`Please enter a valid question number between 1 and ${quizQuestions.length}`);
+                return;
+            }
+            
+            // JUMP RESTRICTION: Can only jump to maxReachedQ + 1
+            const targetIndex = qNum - 1;
+            // Allow jumping to any previous question OR the next immediate unseen question (maxReachedQ + 1 is safe, but since maxReachedQ is 0-indexed, if we are at Q1 (idx 0), maxReachedQ is 0. Next is 1. qNum=2 => target=1. so target <= maxReached + 1 is logically sound if maxReached tracks index)
+            // Actually, let's simplify: 
+            // if we have seen up to Q10 (index 9), maxReachedQ = 9. 
+            // We can jump to Q1..Q10 (indices 0..9) freely.
+            // We can also naturally proceed to Q11 (index 10).
+            // So allowed range is index <= maxReachedQ. Wait, user might want to jump back. 
+            // If they want to jump forward, they can only go up to maxReachedQ + 1 (the next fresh question) IF they answered the current one? 
+            // Standard UX: You can go back to any previous. You can go forward only to where you left off.
+            // Let's use maxReachedQ. 
+            
+            // Logic: You can view any question index <= maxReachedQ + 1 (allow peeking one ahead? No, usually restricted to seen).
+            // Let's restrict strictly to <= maxReachedQ (assuming maxReachedQ updates when we land on a question).
+            // Actually, if I am on Q10, maxReachedQ is 9. I answer it -> maxReachedQ becomes 10 (Q11). 
+            // So allowed indices are 0 to maxReachedQ.
+            
+            if (targetIndex > maxReachedQ) {
+                // Show Tooltip
+                const tooltip = document.getElementById('jump-tooltip');
+                tooltip.classList.remove('hidden');
+                tooltip.classList.add('toast-visible');
+                
+                // Hide after animation
+                setTimeout(() => {
+                    tooltip.classList.remove('toast-visible');
+                    tooltip.classList.add('hidden');
+                }, 3000);
+                
+                return;
+            }
+            
+            // Adjust for 0-based index
+            currentQ = targetIndex;
+            loadQuiz();
+            saveProgress();
+            
+            // Clear input after jump for better UX
+            input.value = '';
         }
 
         document.getElementById('next-btn').onclick = () => {
             currentQ++;
-            // Save current Q index to storage so page reload returns here
             saveProgress(); 
             loadQuiz();
         };
@@ -434,8 +708,6 @@
         document.getElementById('prev-btn').onclick = () => {
             if (currentQ > 0) {
                 currentQ--;
-                // We do NOT save progress on prev usually to avoid jumping around logic issues,
-                // but for simple viewing it's fine. We just re-render.
                 loadQuiz();
             }
         };
@@ -446,7 +718,6 @@
 
         document.addEventListener('DOMContentLoaded', () => {
             // Check if there's a saved topic preference or default to intro
-            // For now, we default to 'intro' but the user can switch
             switchQuiz('intro');
             
             if(window.loadHeaderFooter) {

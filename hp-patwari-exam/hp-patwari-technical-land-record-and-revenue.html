@@ -92,73 +92,73 @@
 
             <!-- MODULE 2: MEASUREMENTS (Centered & Enhanced) -->
             <!-- Added border container -->
-            <section id="measurements" class="scroll-mt-20 border border-slate-200 rounded-2xl p-4 md:p-6 bg-white shadow-sm">
+            <section id="measurements" class="scroll-mt-20 border border-slate-200 rounded-2xl p-3 md:p-4 bg-white shadow-sm">
                 <div class="max-w-2xl mx-auto w-full">
                     <!-- Calculator -->
-                    <div class="bg-white rounded-xl shadow-smooth border border-slate-200 p-4 md:p-6">
-                        <div class="flex items-center justify-between mb-4 md:mb-5">
+                    <div class="bg-white rounded-xl shadow-smooth border border-slate-200 p-3 md:p-4">
+                        <div class="flex items-center justify-between mb-3">
                             <h2 class="text-sm font-bold text-slate-900 uppercase tracking-wider flex items-center gap-2 font-heading">
                                 <i class="fa-solid fa-calculator text-green-500" aria-hidden="true"></i> Land Measurement
                             </h2>
-                            <span class="text-[10px] bg-slate-100 text-slate-500 px-2 py-1 rounded font-bold">HP Standard</span>
+                            <span class="text-[10px] bg-slate-100 text-slate-500 px-2 py-0.5 rounded font-bold">HP Standard</span>
                         </div>
                         
-                        <div class="mb-5 md:mb-6">
+                        <div class="mb-3">
                             <!-- ACCESSIBILITY: Explicit label association -->
-                            <label for="bigha-input" class="text-[10px] font-bold text-slate-600 uppercase mb-1.5 block font-sans">Enter Area in Bigha</label>
+                            <label for="bigha-input" class="text-[10px] font-bold text-slate-600 uppercase mb-1 block font-sans">Enter Area in Bigha</label>
                             <div class="relative">
-                                <input type="number" id="bigha-input" placeholder="0" class="w-full p-3 pl-4 border border-slate-300 rounded-lg text-2xl font-bold text-slate-800 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition font-sans placeholder-slate-200" oninput="convertLand()">
-                                <span class="absolute right-4 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400">Bigha</span>
+                                <input type="number" id="bigha-input" placeholder="0" class="w-full p-2 pl-3 border border-slate-300 rounded-lg text-xl font-bold text-slate-800 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition font-sans placeholder-slate-200" oninput="convertLand()">
+                                <span class="absolute right-3 top-1/2 -translate-y-1/2 text-[10px] font-bold text-slate-400">Bigha</span>
                             </div>
                         </div>
 
-                        <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+                        <div class="grid grid-cols-3 gap-2">
                             <!-- Biswa -->
-                            <div class="bg-slate-50 p-3 rounded border border-slate-100 flex flex-col justify-between">
-                                <div class="text-[10px] text-slate-600 font-bold uppercase font-sans mb-1">Biswa</div>
-                                <div id="res-biswa" class="text-lg font-bold text-slate-800 font-sans">0</div>
+                            <div class="bg-slate-50 p-2 rounded border border-slate-100 flex flex-col justify-center items-center text-center">
+                                <div class="text-[9px] text-slate-600 font-bold uppercase font-sans mb-0.5">Biswa</div>
+                                <div id="res-biswa" class="text-sm font-bold text-slate-800 font-sans">0</div>
                             </div>
                             
                             <!-- Acres -->
-                            <div class="bg-green-50 p-3 rounded border border-green-100 flex flex-col justify-between">
-                                <div class="text-[10px] text-green-700 font-bold uppercase font-sans mb-1">Acres</div>
-                                <div id="res-acre" class="text-lg font-bold text-green-900 font-sans">0</div>
+                            <div class="bg-green-50 p-2 rounded border border-green-100 flex flex-col justify-center items-center text-center">
+                                <div class="text-[9px] text-green-700 font-bold uppercase font-sans mb-0.5">Acres</div>
+                                <div id="res-acre" class="text-sm font-bold text-green-900 font-sans">0</div>
                             </div>
                             
                             <!-- Hectares -->
-                            <div class="bg-blue-50 p-3 rounded border border-blue-100 flex flex-col justify-between">
-                                <div class="text-[10px] text-blue-700 font-bold uppercase font-sans mb-1">Hectares</div>
-                                <div id="res-hec" class="text-lg font-bold text-blue-900 font-sans">0</div>
+                            <div class="bg-blue-50 p-2 rounded border border-blue-100 flex flex-col justify-center items-center text-center">
+                                <div class="text-[9px] text-blue-700 font-bold uppercase font-sans mb-0.5">Hectares</div>
+                                <div id="res-hec" class="text-sm font-bold text-blue-900 font-sans">0</div>
                             </div>
 
                             <!-- Marla (New) -->
-                            <div class="bg-orange-50 p-3 rounded border border-orange-100 flex flex-col justify-between">
-                                <div class="text-[10px] text-orange-700 font-bold uppercase font-sans mb-1">Marla</div>
-                                <div id="res-marla" class="text-lg font-bold text-orange-900 font-sans">0</div>
+                            <div class="bg-orange-50 p-2 rounded border border-orange-100 flex flex-col justify-center items-center text-center">
+                                <div class="text-[9px] text-orange-700 font-bold uppercase font-sans mb-0.5">Marla</div>
+                                <div id="res-marla" class="text-sm font-bold text-orange-900 font-sans">0</div>
                             </div>
 
                             <!-- Gaj (Sq Yds) -->
-                            <div class="bg-slate-50 p-3 rounded border border-slate-100 flex flex-col justify-between">
-                                <div class="text-[10px] text-slate-600 font-bold uppercase font-sans mb-1">Gaj (Sq.Yds)</div>
-                                <div id="res-sqyd" class="text-lg font-bold text-slate-800 font-sans">0</div>
+                            <div class="bg-slate-50 p-2 rounded border border-slate-100 flex flex-col justify-center items-center text-center">
+                                <div class="text-[9px] text-slate-600 font-bold uppercase font-sans mb-0.5">Gaj</div>
+                                <div id="res-sqyd" class="text-sm font-bold text-slate-800 font-sans">0</div>
                             </div>
 
                             <!-- Sq. Meters -->
-                            <div class="bg-slate-50 p-3 rounded border border-slate-100 flex flex-col justify-between">
-                                <div class="text-[10px] text-slate-600 font-bold uppercase font-sans mb-1">Sq. Meters</div>
-                                <div id="res-sqm" class="text-lg font-bold text-slate-800 font-sans">0</div>
+                            <div class="bg-slate-50 p-2 rounded border border-slate-100 flex flex-col justify-center items-center text-center">
+                                <div class="text-[9px] text-slate-600 font-bold uppercase font-sans mb-0.5">Sq.M</div>
+                                <div id="res-sqm" class="text-sm font-bold text-slate-800 font-sans">0</div>
                             </div>
                         </div>
                         
-                        <div class="mt-6 border-t border-slate-100 pt-4">
-                            <h3 class="text-xs font-bold text-slate-700 uppercase mb-3 font-heading">Key Conversion Formulas (Exam Standard)</h3>
-                            <ul class="grid grid-cols-1 md:grid-cols-2 gap-2 text-[11px] text-slate-600 font-sans">
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-ruler-combined text-blue-400" aria-hidden="true"></i> 1 Karam = 57.15 inches</li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-vector-square text-blue-400" aria-hidden="true"></i> 1 Marla = 9 Sarsahi (Sq. Karam)</li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-layer-group text-blue-400" aria-hidden="true"></i> 1 Kanal = 20 Marlas</li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-chart-area text-blue-400" aria-hidden="true"></i> 1 Bigha = 20 Biswas</li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-earth-asia text-blue-400" aria-hidden="true"></i> 1 Acre ≈ 4 Bigha 16 Biswa</li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-infinity text-blue-400" aria-hidden="true"></i> 1 Hectare ≈ 12.5 Bigha</li>
+                        <div class="mt-4 border-t border-slate-100 pt-3">
+                            <h3 class="text-[10px] font-bold text-slate-700 uppercase mb-2 font-heading">Key Formulas</h3>
+                            <ul class="grid grid-cols-2 gap-x-2 gap-y-1 text-[10px] text-slate-600 font-sans leading-tight">
+                                <li class="flex items-center gap-1.5"><i class="fa-solid fa-ruler-combined text-blue-400 text-[9px]" aria-hidden="true"></i> 1 Karam = 57.15"</li>
+                                <li class="flex items-center gap-1.5"><i class="fa-solid fa-vector-square text-blue-400 text-[9px]" aria-hidden="true"></i> 1 Marla = 9 S.Karam</li>
+                                <li class="flex items-center gap-1.5"><i class="fa-solid fa-layer-group text-blue-400 text-[9px]" aria-hidden="true"></i> 1 Kanal = 20 Marla</li>
+                                <li class="flex items-center gap-1.5"><i class="fa-solid fa-chart-area text-blue-400 text-[9px]" aria-hidden="true"></i> 1 Bigha = 20 Biswa</li>
+                                <li class="flex items-center gap-1.5"><i class="fa-solid fa-earth-asia text-blue-400 text-[9px]" aria-hidden="true"></i> 1 Acre ≈ 4.8 Bigha</li>
+                                <li class="flex items-center gap-1.5"><i class="fa-solid fa-infinity text-blue-400 text-[9px]" aria-hidden="true"></i> 1 Hect ≈ 12.5 Bigha</li>
                             </ul>
                         </div>
                     </div>
@@ -476,7 +476,8 @@
             container.innerHTML = '';
             hierarchyData.forEach(item => {
                 const div = document.createElement('div');
-                div.className = "tree-line pl-2"; 
+                // FIX: Changed "tree-line" to "relative" to remove the unwanted vertical line overlay
+                div.className = "relative pl-2"; 
                 // STRUCTURE FIX: Changed H4 to H3 to follow strict hierarchy (H1 -> H2 -> H3)
                 div.innerHTML = `
                     <div class="absolute -left-[27px] md:-left-[33px] top-3 h-3 w-3 rounded-full ${item.color} border-2 border-white shadow-sm ring-1 ring-slate-200 z-10"></div>
@@ -502,7 +503,7 @@
                         </div>
                         <h3 class="font-bold text-xs text-slate-900 font-heading">${tool.title}</h3>
                     </div>
-                    <p class="text-[10px] text-slate-500 leading-snug line-clamp-2 font-sans">${tool.desc}</p>
+                    <p class="text-[10px] text-slate-500 leading-snug font-sans">${tool.desc}</p>
                 `;
                 grid.appendChild(div);
             });

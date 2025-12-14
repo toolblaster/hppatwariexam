@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>HP Patwari Mock Test 1: Land Records & Revenue Acts</title>
+    <meta name="description" content="Attempt HP Patwari Mock Test 1 covering Land Records, Revenue Acts, and Mensuration. High-yield MCQs for HP government exam preparation.">
+    
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- GLOBAL STYLES & CONFIG - Updated Path ../../ -->
+    <script src="../../js/tailwind-global-css.js"></script>
+    <!-- Header Footer Script - Updated Path ../../ -->
+    <script src="../../js/header-footer.js"></script>
+    <!-- Global Scripts - Updated Path ../../ -->
+    <script src="../../js/global-scripts.js"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts (Inter & Poppins ONLY) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased flex flex-col min-h-screen font-sans">
+
+    <!-- Compact Nav (Static) -->
+    <nav class="bg-white border-b border-slate-300 shadow-sm nav-height" id="global-nav">
+        <!-- Injected by header-footer.js -->
+    </nav>
+
+    <!-- Compact Hero Section -->
+    <header class="bg-white border-b border-slate-300 py-4 md:py-6">
+        <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 text-center md:text-left">
+            <h1 class="text-2xl md:text-3xl font-extrabold font-heading mb-2 leading-tight">
+                <span class="gradient-text">HP Patwari Mock Test 1</span>
+            </h1>
+            <p class="text-xs md:text-sm text-slate-500 max-w-2xl font-sans">
+                Specialized MCQ bank covering Land Records, Revenue Acts, and Mensuration logic. Essential practice for HP Revenue Department exams.
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 pt-[95px] pb-8 flex-grow">
+        
+        <div id="app-content" class="max-w-5xl mx-auto">
+            
+            <!-- MODULE 5: QUIZ (Moved from Technical Page) -->
+            <section id="quiz" class="border border-slate-300 rounded-2xl p-4 md:p-6 bg-white shadow-sm">
+                <div class="bg-slate-900 rounded-xl p-3 md:p-6 shadow-2xl relative overflow-hidden">
+                    <div class="relative z-10 grid lg:grid-cols-12 gap-4 md:gap-6">
+                        <!-- Controls -->
+                        <div class="lg:col-span-4 space-y-3 md:space-y-4 text-center md:text-left">
+                            <div>
+                                <h2 class="text-lg md:text-xl font-bold text-white font-heading">Question Bank</h2>
+                                <p class="text-[10px] md:text-xs text-slate-400 mt-1 font-sans">Select a topic to start practicing.</p>
+                            </div>
+
+                            <label for="quiz-selector" class="sr-only">Select Quiz Module</label>
+                            <select id="quiz-selector" onchange="switchQuiz(this.value)" class="w-full bg-slate-800 text-white text-[11px] md:text-xs font-bold p-2 md:p-2.5 rounded border border-slate-700 focus:border-blue-500 outline-none font-sans text-center md:text-left">
+                                <option value="intro">Intro: Exam Traps</option>
+                                <option value="core">Core: Land Records</option>
+                                <option value="advanced">Adv: Legal/Numerical</option>
+                                <option value="consolidation">Spl: Consolidation</option>
+                            </select>
+
+                            <div class="flex items-center justify-between bg-slate-800/50 p-2 md:p-3 rounded-lg border border-slate-700/50">
+                                <div class="text-center md:text-left">
+                                    <div class="text-[9px] md:text-[10px] text-slate-400 uppercase font-bold font-sans">Score</div>
+                                    <div class="text-lg md:text-xl font-bold text-white font-heading" id="score-display">0</div>
+                                </div>
+                                <div class="text-center md:text-right">
+                                    <div class="text-[9px] md:text-[10px] text-slate-400 uppercase font-bold font-sans">Total</div>
+                                    <div class="text-lg md:text-xl font-bold text-white font-heading" id="q-count-display">0</div>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-4 pt-4 border-t border-slate-800 text-center md:text-left">
+                                <!-- UPDATED LINK: Goes UP two levels to root, then down to technical page -->
+                                <a href="../hp-technical-land-record-and-revenue.html" class="inline-flex items-center gap-2 text-[10px] font-bold text-slate-400 hover:text-white transition">
+                                    <i class="fa-solid fa-arrow-left"></i> Back to Study Notes
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Question Area -->
+                        <div class="lg:col-span-8 bg-white rounded-lg p-3 md:p-5 min-h-[300px] flex flex-col relative">
+                            <div id="quiz-loader" class="hidden absolute inset-0 bg-white z-20 flex flex-col items-center justify-center">
+                                <i class="fa-solid fa-circle-notch fa-spin text-2xl text-blue-600" aria-hidden="true"></i>
+                            </div>
+
+                            <div id="question-area" class="flex flex-col h-full">
+                                <div class="flex justify-between items-center mb-3 md:mb-4">
+                                    <span class="text-[10px] font-bold text-blue-600 uppercase bg-blue-50 px-2 py-0.5 rounded font-sans">Q <span id="q-number">1</span></span>
+                                    <div class="h-1 w-20 bg-slate-100 rounded-full overflow-hidden">
+                                        <div id="progress-bar" class="h-full bg-blue-500 w-0 transition-all duration-300"></div>
+                                    </div>
+                                </div>
+                                
+                                <h3 id="q-text" class="text-xs md:text-sm font-bold text-slate-900 mb-3 md:mb-4 leading-relaxed font-heading text-center md:text-left">Loading...</h3>
+                                
+                                <div id="options-area" class="space-y-2 flex-grow font-sans text-[11px] md:text-sm"></div>
+
+                                <div id="feedback-area" class="mt-3 md:mt-4 hidden p-2 md:p-3 rounded text-[10px] md:text-[11px] font-medium border-l-2 font-sans"></div>
+                                
+                                <div class="mt-3 md:mt-4 flex justify-center md:justify-end">
+                                    <button id="next-btn" class="hidden px-4 py-2 bg-slate-900 text-white text-[10px] md:text-xs font-bold rounded hover:bg-slate-800 transition font-sans">
+                                        Next <i class="fa-solid fa-arrow-right ml-1" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div id="result-area" class="hidden text-center py-10 flex-col items-center justify-center h-full">
+                                <div class="w-16 h-16 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center text-2xl mb-4 shadow-sm">
+                                    <i class="fa-solid fa-trophy"></i>
+                                </div>
+                                <h3 class="text-lg font-bold text-slate-900 mb-2 font-heading">Module Complete!</h3>
+                                <p class="text-xs text-slate-500 mb-6 font-sans">You scored <span id="final-score" class="font-bold text-slate-900 text-base"></span></p>
+                                <button onclick="resetQuiz()" class="px-6 py-2.5 bg-blue-600 text-white text-xs font-bold rounded-lg hover:bg-blue-700 transition font-sans shadow-md hover:shadow-lg transform active:scale-95">
+                                    Restart Quiz
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Global Footer (Styles & Content loaded via JS) -->
+    <footer id="global-footer"></footer>
+
+    <script>
+        // --- QUIZ LOGIC ONLY ---
+        let quizQuestions = [];
+        let currentQ = 0;
+        let score = 0;
+
+        // UPDATED PATHS for fetch to ../../patwari-json-data/
+        const quizFiles = {
+            'intro': '../../patwari-json-data/quiz_data.json',
+            'core': '../../patwari-json-data/100_mcq_hp_land_records_surveying_and_revenue_acts.json',
+            'advanced': '../../patwari-json-data/100_mcq_advanced_legal_and_numerical.json',
+            'consolidation': '../../patwari-json-data/50_mcq_final_phase_consolidation_schemes.json'
+        };
+
+        async function fetchData(url) {
+            const response = await fetch(url);
+            if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+            return await response.json();
+        }
+
+        async function switchQuiz(topic) {
+            const loader = document.getElementById('quiz-loader');
+            const qArea = document.getElementById('question-area');
+            const resultArea = document.getElementById('result-area');
+            
+            qArea.classList.add('hidden');
+            resultArea.classList.add('hidden');
+            resultArea.classList.remove('flex'); // Remove flex when hiding
+            loader.classList.remove('hidden');
+
+            const url = quizFiles[topic];
+            try {
+                const data = await fetchData(url);
+                quizQuestions = Array.isArray(data) ? data : [];
+                
+                currentQ = 0;
+                score = 0;
+                document.getElementById('q-count-display').innerText = quizQuestions.length;
+                document.getElementById('score-display').innerText = 0;
+                
+                setTimeout(() => {
+                    loader.classList.add('hidden');
+                    qArea.classList.remove('hidden');
+                    loadQuiz();
+                }, 500); 
+                
+            } catch (error) {
+                console.error("Quiz load failed", error);
+                loader.classList.add('hidden');
+            }
+        }
+
+        function loadQuiz() {
+            if (currentQ >= quizQuestions.length) {
+                document.getElementById('question-area').classList.add('hidden');
+                const resultArea = document.getElementById('result-area');
+                resultArea.classList.remove('hidden');
+                resultArea.classList.add('flex'); // Add flex to center content
+                document.getElementById('final-score').innerText = `${score} / ${quizQuestions.length}`;
+                return;
+            }
+
+            const q = quizQuestions[currentQ];
+            const questionText = q.q || q.q_en;
+            const options = q.options || q.options_en;
+
+            document.getElementById('q-number').innerText = currentQ + 1;
+            document.getElementById('q-text').innerText = questionText;
+            
+            const progressPct = ((currentQ) / quizQuestions.length) * 100;
+            document.getElementById('progress-bar').style.width = `${progressPct}%`;
+
+            document.getElementById('next-btn').classList.add('hidden');
+            document.getElementById('feedback-area').classList.add('hidden');
+            
+            const optsDiv = document.getElementById('options-area');
+            optsDiv.innerHTML = '';
+            
+            options.forEach((opt, idx) => {
+                const btn = document.createElement('button');
+                btn.className = "w-full text-left p-3 md:p-4 rounded-xl border-2 border-slate-200 hover:border-blue-200 hover:bg-blue-50 transition text-slate-700 font-medium relative group";
+                btn.innerHTML = `<span class="inline-block w-6 font-bold text-slate-400 group-hover:text-blue-500">${String.fromCharCode(65+idx)}.</span> ${opt}`;
+                btn.onclick = () => checkAnswer(idx, btn, q);
+                optsDiv.appendChild(btn);
+            });
+        }
+
+        function checkAnswer(selectedIdx, btn, q) {
+            const buttons = document.querySelectorAll('#options-area button');
+            buttons.forEach(b => {
+                b.disabled = true;
+                b.classList.add('opacity-70', 'cursor-not-allowed');
+            });
+            btn.classList.remove('opacity-70');
+
+            const feedback = document.getElementById('feedback-area');
+            feedback.classList.remove('hidden');
+
+            if (selectedIdx === q.correct) {
+                score++;
+                document.getElementById('score-display').innerText = score;
+                btn.classList.remove('border-slate-100', 'hover:border-blue-200', 'hover:bg-blue-50');
+                btn.classList.add('bg-green-100', 'border-green-500', 'text-green-800');
+                feedback.className = "mt-3 md:mt-6 p-3 md:p-4 rounded-xl text-sm font-medium border-l-4 bg-green-50 text-green-800 border-green-500";
+                feedback.innerHTML = `<div class="flex items-start gap-3"><i class="fa-solid fa-check-circle text-lg mt-0.5" aria-hidden="true"></i><div><strong>Correct!</strong><p class="mt-1 opacity-90">${q.explanation}</p></div></div>`;
+            } else {
+                btn.classList.remove('border-slate-100', 'hover:border-blue-200', 'hover:bg-blue-50');
+                btn.classList.add('bg-red-100', 'border-red-500', 'text-red-800');
+                
+                const correctBtn = buttons[q.correct];
+                correctBtn.classList.remove('opacity-70', 'border-slate-100');
+                correctBtn.classList.add('bg-green-50', 'border-green-300', 'text-green-700');
+
+                feedback.className = "mt-3 md:mt-6 p-3 md:p-4 rounded-xl text-sm font-medium border-l-4 bg-red-50 text-red-800 border-red-500";
+                feedback.innerHTML = `<div class="flex items-start gap-3"><i class="fa-solid fa-xmark-circle text-lg mt-0.5" aria-hidden="true"></i><div><strong>Incorrect.</strong><p class="mt-1 opacity-90">${q.explanation}</p></div></div>`;
+            }
+
+            document.getElementById('next-btn').classList.remove('hidden');
+        }
+
+        document.getElementById('next-btn').onclick = () => {
+            currentQ++;
+            loadQuiz();
+        };
+
+        function resetQuiz() {
+            const selector = document.getElementById('quiz-selector');
+            switchQuiz(selector.value);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Load Initial Quiz
+            switchQuiz('intro');
+            
+            if(window.loadHeaderFooter) {
+                // Root path is '../..' because we are 2 folders deep: hp-patwari-exam/patwari-mock-test/
+                loadHeaderFooter({ type: 'technical', rootPath: '../..' });
+            }
+        });
+    </script>
+</body>
+</html>

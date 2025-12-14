@@ -6,7 +6,7 @@
     
     <!-- SEO Meta Tags -->
     <title>HP Patwari Land Records Guide: Acts, Surveying & MCQ Bank</title>
-    <meta name="description" content="Master HP Patwari Land Records: Interactive guide on Revenue Acts, Surveying terms (Jamabandi/Khasra), and a specialized MCQ bank for 2026 prep.">
+    <meta name="description" content="Master HP Patwari Land Records: Interactive guide on Revenue Acts, Surveying terms (Jamabandi, Khasra), and a specialized MCQ bank for 2026 prep.">
     
     <!-- Tailwind CSS (CDN) -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -14,6 +14,8 @@
     <script src="../js/tailwind-global-css.js"></script>
     <!-- Header Footer Script -->
     <script src="../js/header-footer.js"></script>
+    <!-- NEW: Global Scripts -->
+    <script src="../js/global-scripts.js"></script>
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -42,14 +44,16 @@
     </header>
 
     <!-- Main Content -->
-    <main class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 pt-6 pb-8 flex-grow">
+    <!-- Added pt-[95px] as requested for spacing between H1/Header and Content -->
+    <main class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 pt-[95px] pb-8 flex-grow">
         
         <h1 class="sr-only">Technical Master Guide for HP Land Records</h1>
         
         <div id="app-content" class="space-y-6 md:space-y-12">
             
             <!-- MODULE 1: TERMINOLOGY -->
-            <section id="terminology" class="scroll-mt-20">
+            <!-- Added border, rounded corners, and background to create separation -->
+            <section id="terminology" class="scroll-mt-20 border border-slate-200 rounded-2xl p-4 md:p-6 bg-white shadow-sm">
                 <div class="flex flex-col md:flex-row justify-between items-center mb-4 md:mb-6 gap-4">
                     <div class="text-center md:text-left w-full md:w-auto">
                         <h2 class="text-lg md:text-xl font-extrabold text-slate-900 flex items-center justify-center md:justify-start gap-2 font-heading">
@@ -87,7 +91,8 @@
             </section>
 
             <!-- MODULE 2: MEASUREMENTS (Centered & Enhanced) -->
-            <section id="measurements" class="scroll-mt-20">
+            <!-- Added border container -->
+            <section id="measurements" class="scroll-mt-20 border border-slate-200 rounded-2xl p-4 md:p-6 bg-white shadow-sm">
                 <div class="max-w-2xl mx-auto w-full">
                     <!-- Calculator -->
                     <div class="bg-white rounded-xl shadow-smooth border border-slate-200 p-4 md:p-6">
@@ -161,7 +166,8 @@
             </section>
 
             <!-- MODULE 3: ACTS & LAWS -->
-            <section id="laws" class="scroll-mt-20">
+            <!-- Added border container -->
+            <section id="laws" class="scroll-mt-20 border border-slate-200 rounded-2xl p-4 md:p-6 bg-white shadow-sm">
                 <h2 class="text-lg md:text-xl font-extrabold text-slate-900 mb-3 md:mb-4 flex items-center justify-center md:justify-start gap-2 font-heading">
                     <span class="w-1 h-5 md:h-6 bg-purple-600 rounded-full"></span> Vital Acts
                 </h2>
@@ -187,7 +193,8 @@
             </section>
 
             <!-- MODULE 4: HIERARCHY & TOOLS -->
-            <section id="hierarchy" class="scroll-mt-20 grid lg:grid-cols-2 gap-4 md:gap-6">
+            <!-- Added border container and managed grid spacing within it -->
+            <section id="hierarchy" class="scroll-mt-20 grid lg:grid-cols-2 gap-4 md:gap-6 border border-slate-200 rounded-2xl p-4 md:p-6 bg-white shadow-sm">
                 <!-- Hierarchy -->
                 <div class="bg-white rounded-xl shadow-smooth border border-slate-200 p-3 md:p-5">
                     <h2 class="text-sm font-bold text-slate-900 uppercase tracking-wider mb-4 md:mb-5 flex items-center justify-center md:justify-start gap-2 font-heading">
@@ -232,7 +239,8 @@
             </section>
 
             <!-- MODULE 5: QUIZ -->
-            <section id="quiz" class="scroll-mt-20">
+            <!-- Added border container -->
+            <section id="quiz" class="scroll-mt-20 border border-slate-200 rounded-2xl p-4 md:p-6 bg-white shadow-sm">
                 <div class="bg-slate-900 rounded-xl p-3 md:p-6 shadow-2xl relative overflow-hidden">
                     <div class="relative z-10 grid lg:grid-cols-12 gap-4 md:gap-6">
                         <!-- Controls -->
@@ -629,6 +637,30 @@
 
                 terminologyData = terms;
                 lawsData = laws;
+                // Sort laws chronologically
+                lawsData.sort((a, b) => {
+                    const yearA = parseInt(a.year);
+                    const yearB = parseInt(b.year);
+                    
+                    // Logic: Numeric years come first, sorted ascending.
+                    // Non-numeric years (NaN) are pushed to the bottom.
+                    
+                    // Check if years are valid numbers
+                    const isNumA = !isNaN(yearA);
+                    const isNumB = !isNaN(yearB);
+
+                    if (isNumA && isNumB) {
+                        return yearA - yearB; // Both are numbers: sort normally
+                    } else if (isNumA && !isNumB) {
+                        return -1; // A is number, B is text: A comes first
+                    } else if (!isNumA && isNumB) {
+                        return 1; // A is text, B is number: B comes first
+                    } else {
+                        // Both are text (e.g. 'Rules' vs 'Misc'), keep original relative order or sort alphabetically if preferred
+                        // For now, let's sort them alphabetically by title to have a deterministic order
+                        return a.title.localeCompare(b.title);
+                    }
+                });
                 hierarchyData = hierarchy;
                 toolsData = tools;
 

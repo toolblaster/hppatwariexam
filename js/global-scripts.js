@@ -3,8 +3,9 @@
  * Centralized logic for UI interactions, utility functions, and future state management.
  * * Features:
  * 1. Back to Top Button (Auto-injects and manages visibility)
- * 2. Mobile Menu Toggle Listener (Delegate)
- * 3. Future Roadmap: Dark Mode & Font Size preferences
+ * 2. Breadcrumb Generator (Dynamic navigation paths)
+ * 3. Mobile Menu Toggle Listener (Delegate)
+ * 4. Future Roadmap: Dark Mode & Font Size preferences
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -49,6 +50,64 @@ function setupBackToTop() {
         });
     });
 }
+
+/**
+ * 2. Breadcrumb Generator
+ * Renders a consistent breadcrumb navigation based on the provided path array.
+ * * Usage:
+ * renderBreadcrumb('container-id', [
+ * { label: 'Home', link: '../index.html' },
+ * { label: 'Section', link: 'section.html' },
+ * { label: 'Current Page', link: '#' }
+ * ]);
+ */
+window.renderBreadcrumb = function(containerId, items) {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+
+    if (!items || items.length === 0) {
+        container.innerHTML = '';
+        return;
+    }
+
+    let html = `
+    <nav class="flex justify-center md:justify-start mb-3 md:mb-4" aria-label="Breadcrumb">
+        <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse text-[10px] md:text-xs font-medium">
+    `;
+
+    items.forEach((item, index) => {
+        const isLast = index === items.length - 1;
+        const isFirst = index === 0;
+        
+        if (isFirst) {
+            // Home Icon Item
+            html += `
+            <li class="inline-flex items-center">
+                <a href="${item.link}" class="inline-flex items-center text-slate-500 hover:text-blue-600 transition-colors">
+                    <i class="fa-solid fa-house mr-1.5"></i> ${item.label}
+                </a>
+            </li>`;
+        } else {
+            // Chevron Separator + Link/Active Item
+            html += `
+            <li ${isLast ? 'aria-current="page"' : ''}>
+                <div class="flex items-center">
+                    <i class="fa-solid fa-chevron-right text-slate-300 mx-1 text-[8px]"></i>
+                    ${isLast 
+                        ? `<span class="ml-1 text-blue-600 font-semibold bg-blue-50 px-2 py-0.5 rounded-full border border-blue-100">${item.label}</span>`
+                        : `<a href="${item.link}" class="ml-1 text-slate-400 hover:text-blue-600 transition-colors">${item.label}</a>`
+                    }
+                </div>
+            </li>`;
+        }
+    });
+
+    html += `
+        </ol>
+    </nav>`;
+    
+    container.innerHTML = html;
+};
 
 /**
  * Helper: Simple storage wrapper for future use (e.g. Dark Mode)

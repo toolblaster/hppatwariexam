@@ -212,6 +212,7 @@
                                 <i class="fa-solid fa-rotate-right group-hover:rotate-180 transition-transform duration-500"></i> Reset
                             </button>
                             
+                            <!-- Updated Link: Goes back to parent technical guide -->
                             <a href="../hp-technical-land-record-and-revenue.html" class="flex-1 md:flex-none py-1.5 px-3 rounded-lg border border-slate-700 text-slate-400 text-[10px] font-bold hover:bg-slate-800 hover:text-white transition flex items-center justify-center gap-2 group whitespace-nowrap">
                                 <i class="fa-solid fa-arrow-left group-hover:-translate-x-1 transition-transform"></i> Notes
                             </a>
@@ -331,12 +332,12 @@
         let userAnswers = {}; // { questionId: { selected: index, isCorrect: bool } }
         let maxReachedQ = 0; // Track max question reached
 
-        // UPDATED PATHS for fetch to ../../patwari-json-data/
+        // UPDATED PATHS for fetch to ../patwari-json-data/ (one level up)
         const quizFiles = {
-            'intro': '../../patwari-json-data/71_mcq_basic_phase_hp_revenue.json',
-            'core': '../../patwari-json-data/100_mcq_hp_land_records_surveying_and_revenue_acts.json',
-            'advanced': '../../patwari-json-data/100_mcq_advanced_legal_and_numerical.json',
-            'consolidation': '../../patwari-json-data/50_mcq_final_phase_consolidation_schemes.json'
+            'intro': '../patwari-json-data/71_mcq_basic_phase_hp_revenue.json',
+            'core': '../patwari-json-data/100_mcq_hp_land_records_surveying_and_revenue_acts.json',
+            'advanced': '../patwari-json-data/100_mcq_advanced_legal_and_numerical.json',
+            'consolidation': '../patwari-json-data/50_mcq_final_phase_consolidation_schemes.json'
         };
 
         // --- LocalStorage Helpers ---
@@ -660,20 +661,6 @@
             
             // JUMP RESTRICTION: Can only jump to maxReachedQ + 1
             const targetIndex = qNum - 1;
-            // Allow jumping to any previous question OR the next immediate unseen question (maxReachedQ + 1 is safe, but since maxReachedQ is 0-indexed, if we are at Q1 (idx 0), maxReachedQ is 0. Next is 1. qNum=2 => target=1. so target <= maxReached + 1 is logically sound if maxReached tracks index)
-            // Actually, let's simplify: 
-            // if we have seen up to Q10 (index 9), maxReachedQ = 9. 
-            // We can jump to Q1..Q10 (indices 0..9) freely.
-            // We can also naturally proceed to Q11 (index 10).
-            // So allowed range is index <= maxReachedQ. Wait, user might want to jump back. 
-            // If they want to jump forward, they can only go up to maxReachedQ + 1 (the next fresh question) IF they answered the current one? 
-            // Standard UX: You can go back to any previous. You can go forward only to where you left off.
-            // Let's use maxReachedQ. 
-            
-            // Logic: You can view any question index <= maxReachedQ + 1 (allow peeking one ahead? No, usually restricted to seen).
-            // Let's restrict strictly to <= maxReachedQ (assuming maxReachedQ updates when we land on a question).
-            // Actually, if I am on Q10, maxReachedQ is 9. I answer it -> maxReachedQ becomes 10 (Q11). 
-            // So allowed indices are 0 to maxReachedQ.
             
             if (targetIndex > maxReachedQ) {
                 // Show Tooltip

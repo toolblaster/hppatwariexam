@@ -432,5 +432,19 @@
         "title_hi": "बेनामी लेनदेन (निषेध) संशोधन अधिनियम",
         "details": "Cracks down on proxy ownership. <br><strong>Confiscation:</strong> Assets held benami can be confiscated without compensation. <br><strong>HP Relevance:</strong> Used to check non-Himachalis buying agricultural land in the name of Himachalis.",
         "details_hi": "प्रॉक्सी स्वामित्व पर नकेल कसता है। <br><strong>जब्ती:</strong> बेनामी रखी गई संपत्ति को बिना किसी मुआवजे के जब्त किया जा सकता है। <br><strong>हि.प्र. प्रासंगिकता:</strong> हिमाचली के नाम पर कृषि भूमि खरीदने वाले गैर-हिमाचली की जांच के लिए उपयोग किया जाता है।"
+    },
+    {
+        "year": "1968",
+        "title": "HP Aerial Ropeways Act (Amended)",
+        "title_hi": "हि.प्र. रज्जुमार्ग अधिनियम (संशोधित)",
+        "details": "Land acquisition for ropeways (Parvatmala Yojana). <br><strong>Right of Use:</strong> Special provisions for acquiring only the 'Right of Use' for land under ropeway pillars instead of full acquisition. <br><strong>Compensation:</strong> Patwari assesses crop damage during construction.",
+        "details_hi": "रोपवे के लिए भूमि अधिग्रहण (पर्वतमाला योजना)। <br><strong>उपयोग का अधिकार:</strong> पूर्ण अधिग्रहण के बजाय केवल रोपवे के खंभों के नीचे की भूमि के लिए 'उपयोग का अधिकार' प्राप्त करने के लिए विशेष प्रावधान। <br><strong>मुआवजा:</strong> पटवारी निर्माण के दौरान फसल क्षति का आकलन करता है।"
+    },
+    {
+        "year": "1976",
+        "title": "HP Courts Act",
+        "title_hi": "हि.प्र. न्यायालय अधिनियम",
+        "details": "Defines jurisdiction. <br><strong>Civil vs Revenue:</strong> Clearly demarcates that Civil Courts cannot entertain suits regarding Land Revenue collection or partition (unless title is disputed). <br><strong>Hierarchy:</strong> Sets the pecuniary limits for District Judges vs Senior Civil Judges.",
+        "details_hi": "अधिकार क्षेत्र को परिभाषित करता है। <br><strong>सिविल बनाम राजस्व:</strong> स्पष्ट रूप से सीमांकित करता है कि सिविल न्यायालय भू-राजस्व संग्रह या विभाजन (जब तक कि शीर्षक विवादित न हो) के संबंध में मुकदमों पर विचार नहीं कर सकते। <br><strong>पदानुक्रम:</strong> जिला न्यायाधीशों बनाम वरिष्ठ सिविल न्यायाधीशों के लिए आर्थिक सीमाएँ निर्धारित करता है।"
     }
 ]

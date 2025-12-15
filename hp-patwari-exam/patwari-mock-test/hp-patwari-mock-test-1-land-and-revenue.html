@@ -14,7 +14,7 @@
     <script src="../../js/tailwind-global-css.js"></script>
     <!-- Header Footer Script -->
     <script src="../../js/header-footer.js"></script>
-    <!-- Global Scripts -->
+    <!-- Global Scripts (Contains Breadcrumb Logic) -->
     <script src="../../js/global-scripts.js"></script>
 
     <!-- Font Awesome -->
@@ -49,6 +49,10 @@
     <!-- Compact Hero Section -->
     <header class="bg-white border-b border-slate-300 py-4 md:py-6">
         <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 text-center md:text-left">
+            
+            <!-- Breadcrumb Container -->
+            <div id="breadcrumb-container"></div>
+
             <h1 class="text-2xl md:text-3xl font-extrabold font-heading mb-2 leading-tight">
                 <span class="gradient-text">HP Patwari Mock Test 1</span>
             </h1>
@@ -704,6 +708,15 @@
         }
 
         document.addEventListener('DOMContentLoaded', () => {
+            // Render Breadcrumb Dynamic Logic
+            if(window.renderBreadcrumb) {
+                renderBreadcrumb('breadcrumb-container', [
+                    { label: 'Home', link: '../../index.html' },
+                    { label: 'Technical Guide', link: '../hp-technical-land-record-and-revenue.html' },
+                    { label: 'Mock Test 1', link: '#' }
+                ]);
+            }
+
             // Check if there's a saved topic preference or default to intro
             switchQuiz('intro');
             

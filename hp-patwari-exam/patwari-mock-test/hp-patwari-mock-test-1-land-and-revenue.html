@@ -67,27 +67,91 @@
         
         <div id="app-content" class="max-w-6xl mx-auto">
             
-            <!-- 1. SYLLABUS COVERAGE (DYNAMIC & BILINGUAL) -->
+            <!-- 1. SYLLABUS COVERAGE -->
             <section class="mb-8 animate-fade-in-up">
-                
-                <!-- Header with Toggle -->
-                <div class="flex flex-col md:flex-row justify-between items-center mb-6 gap-4">
-                    <div class="flex items-center gap-2">
+                <!-- Centered Heading with Line -->
+                <div class="flex flex-col items-center mb-6">
+                    <div class="flex items-center gap-2 mb-2">
                         <i class="fa-solid fa-list-check text-blue-600"></i>
                         <h2 class="text-sm font-bold uppercase tracking-wider text-slate-700 font-heading">Topics Covered in this Mock Test</h2>
                     </div>
-                    
-                    <!-- Language Toggle -->
-                    <div class="flex items-center gap-2 bg-slate-100 p-1 rounded-lg border border-slate-200 shadow-inner">
-                        <span class="text-[10px] font-bold text-slate-400 uppercase px-2 tracking-wider">Language:</span>
-                        <button type="button" onclick="setSyllabusLanguage('en')" id="syl-btn-en" class="text-[10px] font-bold px-3 py-1 rounded-md transition-all duration-200 bg-white text-blue-700 shadow-sm ring-1 ring-slate-200">EN</button>
-                        <button type="button" onclick="setSyllabusLanguage('hi')" id="syl-btn-hi" class="text-[10px] font-bold px-3 py-1 rounded-md transition-all duration-200 text-slate-500 hover:text-slate-700">हिन्दी</button>
-                    </div>
+                    <div class="h-px w-32 bg-slate-300 rounded-full"></div>
                 </div>
                 
-                <!-- Dynamic Grid Container -->
-                <div id="syllabus-container" class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <!-- Cards injected by JS -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    
+                    <!-- Phase 1: Foundation (Border 300, 1px) -->
+                    <div class="bg-white rounded-xl p-4 border border-green-300 shadow-sm relative overflow-hidden group hover:shadow-md transition hover:-translate-y-1">
+                        <div class="absolute top-0 right-0 w-16 h-16 bg-green-50 rounded-bl-full -mr-4 -mt-4 z-0 transition-transform group-hover:scale-110"></div>
+                        <h3 class="font-heading font-bold text-slate-800 mb-2 relative z-10 flex items-center gap-2 text-sm">
+                            <span class="w-2 h-2 rounded-full bg-green-500"></span>
+                            Foundation & Basics
+                        </h3>
+                        <p class="text-[10px] text-slate-400 mb-2 font-bold uppercase tracking-wide relative z-10">~100 MCQs</p>
+                        <ul class="space-y-2 text-[11px] text-slate-600 font-sans relative z-10 leading-snug">
+                            <li class="flex gap-2 items-start">
+                                <i class="fa-solid fa-check text-green-500 mt-0.5 text-[10px]"></i>
+                                <span><strong>Docs:</strong> Jamabandi, Khasra, Intkaal, Mussavi, Latha maps.</span>
+                            </li>
+                            <li class="flex gap-2 items-start">
+                                <i class="fa-solid fa-check text-green-500 mt-0.5 text-[10px]"></i>
+                                <span><strong>Units:</strong> Bigha, Biswa, Karam (57"), Acre, Chahi/Barani types.</span>
+                            </li>
+                             <li class="flex gap-2 items-start">
+                                <i class="fa-solid fa-check text-green-500 mt-0.5 text-[10px]"></i>
+                                <span><strong>System:</strong> Hierarchy (Patwari to FC), Lambardar, PM-KISAN.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Phase 2: Advanced (Border 300, 1px) -->
+                    <div class="bg-white rounded-xl p-4 border border-blue-300 shadow-sm relative overflow-hidden group hover:shadow-md transition hover:-translate-y-1">
+                        <div class="absolute top-0 right-0 w-16 h-16 bg-blue-50 rounded-bl-full -mr-4 -mt-4 z-0 transition-transform group-hover:scale-110"></div>
+                        <h3 class="font-heading font-bold text-slate-800 mb-2 relative z-10 flex items-center gap-2 text-sm">
+                            <span class="w-2 h-2 rounded-full bg-blue-500"></span>
+                            Legal & Numerical
+                        </h3>
+                        <p class="text-[10px] text-slate-400 mb-2 font-bold uppercase tracking-wide relative z-10">~100 MCQs</p>
+                        <ul class="space-y-2 text-[11px] text-slate-600 font-sans relative z-10 leading-snug">
+                            <li class="flex gap-2 items-start">
+                                <i class="fa-solid fa-check text-blue-500 mt-0.5 text-[10px]"></i>
+                                <span><strong>Survey:</strong> Area math, Scales, Chains (Gunter), Triangulation.</span>
+                            </li>
+                            <li class="flex gap-2 items-start">
+                                <i class="fa-solid fa-check text-blue-500 mt-0.5 text-[10px]"></i>
+                                <span><strong>Acts:</strong> Sec 118, Encroachment (163), Partition, Appeals.</span>
+                            </li>
+                             <li class="flex gap-2 items-start">
+                                <i class="fa-solid fa-check text-blue-500 mt-0.5 text-[10px]"></i>
+                                <span><strong>Deep Records:</strong> Tatima, Wajib-ul-Arz, Lal Syahi, Min Nos.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Phase 3: Schemes (Border 300, 1px) -->
+                    <div class="bg-white rounded-xl p-4 border border-purple-300 shadow-sm relative overflow-hidden group hover:shadow-md transition hover:-translate-y-1">
+                        <div class="absolute top-0 right-0 w-16 h-16 bg-purple-50 rounded-bl-full -mr-4 -mt-4 z-0 transition-transform group-hover:scale-110"></div>
+                        <h3 class="font-heading font-bold text-slate-800 mb-2 relative z-10 flex items-center gap-2 text-sm">
+                            <span class="w-2 h-2 rounded-full bg-purple-500"></span>
+                            Schemes & Minor Acts
+                        </h3>
+                        <p class="text-[10px] text-slate-400 mb-2 font-bold uppercase tracking-wide relative z-10">~50 MCQs</p>
+                        <ul class="space-y-2 text-[11px] text-slate-600 font-sans relative z-10 leading-snug">
+                            <li class="flex gap-2 items-start">
+                                <i class="fa-solid fa-check text-purple-500 mt-0.5 text-[10px]"></i>
+                                <span><strong>Acts:</strong> Consolidation (Chakbandi), Ceiling Act, Shamlat.</span>
+                            </li>
+                            <li class="flex gap-2 items-start">
+                                <i class="fa-solid fa-check text-purple-500 mt-0.5 text-[10px]"></i>
+                                <span><strong>Rights:</strong> Bartan/Tirni, PESA (Tribal), Nautor Rules.</span>
+                            </li>
+                             <li class="flex gap-2 items-start">
+                                <i class="fa-solid fa-check text-purple-500 mt-0.5 text-[10px]"></i>
+                                <span><strong>Schemes:</strong> Solar Fencing, Fasal Bima, E-District.</span>
+                            </li>
+                        </ul>
+                    </div>
+
                 </div>
             </section>
 
@@ -259,117 +323,6 @@
     <footer id="global-footer"></footer>
 
     <script>
-        // --- SYLLABUS DATA (Bilingual) ---
-        const syllabusData = [
-            {
-                id: 'foundation',
-                colorClass: 'green',
-                colorHex: 'bg-green-500',
-                bgClass: 'bg-green-50',
-                borderClass: 'border-green-300',
-                textClass: 'text-green-500',
-                mcqCount: '~100 MCQs',
-                title: 'Foundation & Basics',
-                title_hi: 'नींव और बुनियादी बातें',
-                items: [
-                    { label: 'Docs', label_hi: 'दस्तावेज़', text: 'Jamabandi, Khasra, Intkaal, Mussavi, Latha maps.', text_hi: 'जमाबंदी, खसरा, इंतकाल, मुसावी, लट्ठा नक्शे।' },
-                    { label: 'Units', label_hi: 'इकाइयाँ', text: 'Bigha, Biswa, Karam (57"), Acre, Chahi/Barani types.', text_hi: 'बीघा, बिस्वा, करम (57"), एकड़, चाही/बारानी प्रकार।' },
-                    { label: 'System', label_hi: 'प्रणाली', text: 'Hierarchy (Patwari to FC), Lambardar, PM-KISAN.', text_hi: 'पदानुक्रम (पटवारी से एफसी), लंबरदार, पीएम-किसान।' }
-                ]
-            },
-            {
-                id: 'advanced',
-                colorClass: 'blue',
-                colorHex: 'bg-blue-500',
-                bgClass: 'bg-blue-50',
-                borderClass: 'border-blue-300',
-                textClass: 'text-blue-500',
-                mcqCount: '~100 MCQs',
-                title: 'Legal & Numerical',
-                title_hi: 'कानूनी और संख्यात्मक',
-                items: [
-                    { label: 'Survey', label_hi: 'सर्वेक्षण', text: 'Area math, Scales, Chains (Gunter), Triangulation.', text_hi: 'क्षेत्र गणित, पैमाने, चेन (गुंटर), त्रिकोणीयकरण।' },
-                    { label: 'Acts', label_hi: 'अधिनियम', text: 'Sec 118, Encroachment (163), Partition, Appeals.', text_hi: 'धारा 118, अतिक्रमण (163), विभाजन, अपील।' },
-                    { label: 'Deep Records', label_hi: 'गहन रिकॉर्ड', text: 'Tatima, Wajib-ul-Arz, Lal Syahi, Min Nos.', text_hi: 'ततीमा, वाजिब-उल-अर्ज, लाल स्याही, मिन नंबर।' }
-                ]
-            },
-            {
-                id: 'schemes',
-                colorClass: 'purple',
-                colorHex: 'bg-purple-500',
-                bgClass: 'bg-purple-50',
-                borderClass: 'border-purple-300',
-                textClass: 'text-purple-500',
-                mcqCount: '~50 MCQs',
-                title: 'Schemes & Minor Acts',
-                title_hi: 'योजनाएं और लघु अधिनियम',
-                items: [
-                    { label: 'Acts', label_hi: 'अधिनियम', text: 'Consolidation (Chakbandi), Ceiling Act, Shamlat.', text_hi: 'चकबंदी, सीलिंग एक्ट, शामलात।' },
-                    { label: 'Rights', label_hi: 'अधिकार', text: 'Bartan/Tirni, PESA (Tribal), Nautor Rules.', text_hi: 'बर्तन/तिरनी, पेसा (आदिवासी), नौतोड़ नियम।' },
-                    { label: 'Schemes', label_hi: 'योजनाएं', text: 'Solar Fencing, Fasal Bima, E-District.', text_hi: 'सोलर फेंसिंग, फसल बीमा, ई-डिस्ट्रिक्ट।' }
-                ]
-            }
-        ];
-
-        let currentSylLang = 'en';
-
-        function setSyllabusLanguage(lang) {
-            currentSylLang = lang;
-            const btnEn = document.getElementById('syl-btn-en');
-            const btnHi = document.getElementById('syl-btn-hi');
-            
-            if (lang === 'en') {
-                btnEn.className = "text-[10px] font-bold px-3 py-1 rounded-md transition-all duration-200 bg-white text-blue-700 shadow-sm ring-1 ring-slate-200";
-                btnHi.className = "text-[10px] font-bold px-3 py-1 rounded-md transition-all duration-200 text-slate-500 hover:text-slate-700";
-            } else {
-                btnHi.className = "text-[10px] font-bold px-3 py-1 rounded-md transition-all duration-200 bg-white text-blue-700 shadow-sm ring-1 ring-slate-200";
-                btnEn.className = "text-[10px] font-bold px-3 py-1 rounded-md transition-all duration-200 text-slate-500 hover:text-slate-700";
-            }
-            
-            renderSyllabus();
-        }
-
-        function renderSyllabus() {
-            const container = document.getElementById('syllabus-container');
-            let htmlContent = '';
-
-            syllabusData.forEach(item => {
-                const title = currentSylLang === 'hi' ? item.title_hi : item.title;
-                const fontClass = currentSylLang === 'hi' ? 'font-hindi' : 'font-heading';
-                
-                let itemsHtml = '';
-                item.items.forEach(li => {
-                    const label = currentSylLang === 'hi' ? li.label_hi : li.label;
-                    const text = currentSylLang === 'hi' ? li.text_hi : li.text;
-                    // Standardized font size to text-xs (12px) for consistency
-                    const langClass = currentSylLang === 'hi' ? 'font-hindi text-xs leading-relaxed' : 'font-sans text-xs';
-                    
-                    itemsHtml += `
-                        <li class="flex gap-2 items-start">
-                            <i class="fa-solid fa-check ${item.textClass} mt-0.5 text-[10px]"></i>
-                            <span class="${langClass}"><strong>${label}:</strong> ${text}</span>
-                        </li>
-                    `;
-                });
-
-                htmlContent += `
-                    <div class="bg-white rounded-xl p-4 border ${item.borderClass} shadow-sm relative overflow-hidden group hover:shadow-md transition hover:-translate-y-1 h-full min-h-[180px] flex flex-col">
-                        <div class="absolute top-0 right-0 w-16 h-16 ${item.bgClass} rounded-bl-full -mr-4 -mt-4 z-0 transition-transform group-hover:scale-110"></div>
-                        <h3 class="${fontClass} font-bold text-slate-800 mb-2 relative z-10 flex items-center gap-2 text-sm">
-                            <span class="w-2 h-2 rounded-full ${item.colorHex}"></span>
-                            ${title}
-                        </h3>
-                        <p class="text-[10px] text-slate-400 mb-2 font-bold uppercase tracking-wide relative z-10">${item.mcqCount}</p>
-                        <ul class="space-y-2 text-slate-600 relative z-10 flex-grow">
-                            ${itemsHtml}
-                        </ul>
-                    </div>
-                `;
-            });
-            
-            container.innerHTML = htmlContent;
-        }
-
         // --- QUIZ LOGIC WITH LOCAL STORAGE ---
         let quizQuestions = [];
         let currentQ = 0;
@@ -707,6 +660,20 @@
             
             // JUMP RESTRICTION: Can only jump to maxReachedQ + 1
             const targetIndex = qNum - 1;
+            // Allow jumping to any previous question OR the next immediate unseen question (maxReachedQ + 1 is safe, but since maxReachedQ is 0-indexed, if we are at Q1 (idx 0), maxReachedQ is 0. Next is 1. qNum=2 => target=1. so target <= maxReached + 1 is logically sound if maxReached tracks index)
+            // Actually, let's simplify: 
+            // if we have seen up to Q10 (index 9), maxReachedQ = 9. 
+            // We can jump to Q1..Q10 (indices 0..9) freely.
+            // We can also naturally proceed to Q11 (index 10).
+            // So allowed range is index <= maxReachedQ. Wait, user might want to jump back. 
+            // If they want to jump forward, they can only go up to maxReachedQ + 1 (the next fresh question) IF they answered the current one? 
+            // Standard UX: You can go back to any previous. You can go forward only to where you left off.
+            // Let's use maxReachedQ. 
+            
+            // Logic: You can view any question index <= maxReachedQ + 1 (allow peeking one ahead? No, usually restricted to seen).
+            // Let's restrict strictly to <= maxReachedQ (assuming maxReachedQ updates when we land on a question).
+            // Actually, if I am on Q10, maxReachedQ is 9. I answer it -> maxReachedQ becomes 10 (Q11). 
+            // So allowed indices are 0 to maxReachedQ.
             
             if (targetIndex > maxReachedQ) {
                 // Show Tooltip
@@ -750,9 +717,6 @@
         }
 
         document.addEventListener('DOMContentLoaded', () => {
-            // Render default syllabus (en)
-            renderSyllabus();
-            
             // Check if there's a saved topic preference or default to intro
             switchQuiz('intro');
             

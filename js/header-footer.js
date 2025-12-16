@@ -22,7 +22,10 @@ const GlobalStyles = {
     nav: "bg-white border-b border-slate-200/80 shadow-[0_1px_2px_rgba(0,0,0,0.03)] nav-height w-full z-50",
     
     // Footer: White, Top border, Padding
-    footer: "bg-white border-t border-slate-200 py-6 mt-auto"
+    footer: "bg-white border-t border-slate-200 py-6 mt-auto",
+
+    // Page Header (H1 Area): Sticky, Glassmorphism, Bottom Border
+    pageHeader: "bg-white border-b border-slate-300 py-3 md:py-4 sticky top-0 z-30 shadow-sm backdrop-blur-md bg-white/95"
 };
 
 // 2. HTML Templates
@@ -48,7 +51,7 @@ const AppComponents = {
                 
                 <div class="flex items-center gap-4">
                     <!-- ACCESSIBILITY: Added aria-label for clearer link purpose -->
-                    <a href="[https://hpsssb.hp.gov.in/](https://hpsssb.hp.gov.in/)" target="_blank" aria-label="Visit Official HPSSSB Website" class="text-xs font-semibold text-slate-600 hover:text-blue-600 transition flex items-center gap-1 bg-slate-100 px-3 py-1.5 rounded-full hover:bg-blue-50 font-sans">
+                    <a href="https://hpsssb.hp.gov.in/" target="_blank" aria-label="Visit Official HPSSSB Website" class="text-xs font-semibold text-slate-600 hover:text-blue-600 transition flex items-center gap-1 bg-slate-100 px-3 py-1.5 rounded-full hover:bg-blue-50 font-sans">
                         Official Site <i class="fa-solid fa-external-link-alt text-[10px]" aria-hidden="true"></i>
                     </a>
                 </div>
@@ -57,7 +60,6 @@ const AppComponents = {
     `,
 
     // TECHNICAL PAGES NAVIGATION
-    // Updated to use ${rootPath} for all links to support nested folder structures (e.g. patwari-mock-test/)
     navTechnicalContent: (rootPath) => `
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
             <div class="flex justify-between items-center h-full">
@@ -72,16 +74,12 @@ const AppComponents = {
                 
                 <!-- Compact Desktop Menu -->
                 <div class="hidden md:flex space-x-1 items-center bg-slate-100 p-1 rounded-lg">
-                    <!-- Links updated to absolute-like paths using rootPath -->
-                    <!-- Added onclick="window.location.hash='section-id'" logic for smoother in-page navigation if already on page -->
                     <a href="${rootPath}/hp-patwari-exam/hp-technical-land-record-and-revenue.html#terminology" class="text-[11px] font-bold text-slate-600 hover:bg-white hover:text-blue-600 hover:shadow-sm px-3 py-1.5 rounded-md transition font-sans">Terms</a>
                     <a href="${rootPath}/hp-patwari-exam/hp-technical-land-record-and-revenue.html#measurements" class="text-[11px] font-bold text-slate-600 hover:bg-white hover:text-blue-600 hover:shadow-sm px-3 py-1.5 rounded-md transition font-sans">Calc</a>
                     <a href="${rootPath}/hp-patwari-exam/hp-technical-land-record-and-revenue.html#laws" class="text-[11px] font-bold text-slate-600 hover:bg-white hover:text-blue-600 hover:shadow-sm px-3 py-1.5 rounded-md transition font-sans">Laws</a>
-                    <!-- CHANGED LINK TO NEW MOCK TEST LOCATION -->
                     <a href="${rootPath}/hp-patwari-exam/patwari-mock-test/hp-patwari-mock-test-1-land-and-revenue.html" class="text-[11px] font-bold text-white bg-blue-600 px-3 py-1.5 rounded-md shadow-sm hover:bg-blue-700 transition ml-1 font-sans">
                         MCQ Bank
                     </a>
-                    <!-- ADDED STUDY NOTES LINK -->
                     <a href="${rootPath}/hp-patwari-exam/hp-patwari-technical-field-study-notes.html" class="text-[11px] font-bold text-slate-700 bg-white border border-slate-300 px-3 py-1.5 rounded-md hover:bg-slate-50 hover:text-blue-600 hover:border-blue-300 transition ml-1 font-sans shadow-sm">
                         <i class="fa-solid fa-book-open mr-1"></i> Notes
                     </a>
@@ -102,15 +100,64 @@ const AppComponents = {
                 <a href="${rootPath}/hp-patwari-exam/hp-technical-land-record-and-revenue.html#terminology" class="text-[10px] font-bold text-slate-600 bg-slate-50 p-2 rounded font-sans">Terms</a>
                 <a href="${rootPath}/hp-patwari-exam/hp-technical-land-record-and-revenue.html#measurements" class="text-[10px] font-bold text-slate-600 bg-slate-50 p-2 rounded font-sans">Calc</a>
                 <a href="${rootPath}/hp-patwari-exam/hp-technical-land-record-and-revenue.html#laws" class="text-[10px] font-bold text-slate-600 bg-slate-50 p-2 rounded font-sans">Laws</a>
-                <!-- CHANGED LINK TO NEW MOCK TEST LOCATION -->
                 <a href="${rootPath}/hp-patwari-exam/patwari-mock-test/hp-patwari-mock-test-1-land-and-revenue.html" class="text-[10px] font-bold text-blue-600 bg-blue-50 p-2 rounded font-sans">Quiz</a>
-                <!-- ADDED STUDY NOTES LINK MOBILE -->
                 <a href="${rootPath}/hp-patwari-exam/hp-patwari-technical-field-study-notes.html" class="col-span-4 text-[10px] font-bold text-slate-700 bg-slate-100 border border-slate-200 p-2 rounded font-sans mt-1">
                     <i class="fa-solid fa-book-open mr-1"></i> Study Notes (14 Topics)
                 </a>
             </div>
         </div>
-    `
+    `,
+
+    // STANDARDIZED PAGE HEADER (H1)
+    // Centralizes the Hero Logic across Mock Tests, Study Notes, and Technical Guide
+    pageHeader: (config) => {
+        const { 
+            titleHtml,      // Support HTML for Gradient Text spans
+            subtitle,       // Desktop Subtitle
+            mobileSubtitle, // Optional Mobile Short Subtitle
+            rightContent    // HTML for Buttons/Tags on the right
+        } = config;
+
+        return `
+        <header class="${GlobalStyles.pageHeader}">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Breadcrumb Container (Filled by Global Scripts) -->
+                <div id="breadcrumb-container" class="mb-2 scale-90 origin-top-left"></div>
+
+                <div class="flex flex-col md:flex-row md:items-end justify-between gap-3">
+                    <div>
+                        <h1 class="text-xl md:text-2xl font-extrabold font-heading text-slate-900 leading-tight">
+                            ${titleHtml}
+                        </h1>
+                        <p class="text-[11px] md:text-xs text-slate-500 mt-1 max-w-2xl font-medium leading-relaxed hidden sm:block">
+                            ${subtitle}
+                        </p>
+                        ${mobileSubtitle ? `
+                        <p class="text-[10px] text-slate-500 sm:hidden mt-1">
+                            ${mobileSubtitle}
+                        </p>` : ''}
+                    </div>
+                    
+                    <!-- Right Side Actions (Buttons, Tags, etc.) -->
+                    ${rightContent ? `
+                    <div class="flex-shrink-0">
+                        ${rightContent}
+                    </div>` : ''}
+                </div>
+            </div>
+        </header>
+        `;
+    }
+};
+
+/**
+ * Renders the Standard Page Header into a specific container
+ */
+window.renderPageHeader = function(containerId, config) {
+    const container = document.getElementById(containerId);
+    if (container) {
+        container.outerHTML = AppComponents.pageHeader(config);
+    }
 };
 
 /**
@@ -146,8 +193,6 @@ window.loadHeaderFooter = function(options) {
     }
 
     // 3. Handle Hash Scroll (Fix for cross-page anchor links)
-    // If the URL has a hash (e.g. #laws), scroll to it after a short delay
-    // to ensure the page layout is stable.
     if (window.location.hash) {
         setTimeout(() => {
             const id = window.location.hash.substring(1);
@@ -155,6 +200,6 @@ window.loadHeaderFooter = function(options) {
             if (element) {
                 element.scrollIntoView({ behavior: 'smooth' });
             }
-        }, 300); // 300ms delay to allow initial rendering/skeletons
+        }, 300);
     }
 };

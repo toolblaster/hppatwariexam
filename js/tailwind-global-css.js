@@ -10,6 +10,7 @@
  * 5. Skeleton Loading (CLS Prevention)
  * 6. Exam UI Components (New!)
  * 7. GLOBAL BASE STYLES (Centralized CSS replacement)
+ * 8. GUIDE PAGE COMPONENTS (New! For Sidebar layouts)
  * ----------------------------------------------------------------------
  */
 
@@ -255,6 +256,16 @@ tailwind.config = {
                 // Toast Notification Animation Class
                 '.toast-visible': {
                     animation: 'toast-fade 3s forwards',
+                },
+                
+                /* -----------------------------------------------------
+                 * 6. GUIDE PAGE COMPONENTS (Reusable Sidebar)
+                 * ----------------------------------------------------- */
+                '.guide-sidebar': {
+                     '@apply bg-white rounded-xl shadow-sm border border-slate-200 p-4 sticky top-24 max-h-[calc(100vh-6rem)] overflow-y-auto scrollbar-thin': {},
+                },
+                '.mobile-select-container': {
+                     '@apply lg:hidden col-span-1 sticky top-[60px] z-20 bg-slate-50 py-2 -mx-2 px-2 shadow-sm transition-all': {},
                 }
             });
         }

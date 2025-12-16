@@ -14,7 +14,7 @@
     <script src="../js/tailwind-global-css.js"></script>
     <!-- Header Footer Script -->
     <script src="../js/header-footer.js"></script>
-    <!-- EXCLUSIVE COMPONENTS (Page Headers) -->
+    <!-- EXCLUSIVE COMPONENTS -->
     <script src="../js/exclusive-components.js"></script>
     <!-- Global Scripts -->
     <script src="../js/global-scripts.js"></script>
@@ -36,18 +36,18 @@
         .note-content li { margin-bottom: 0.25rem; }
         .note-content strong { color: #1e293b; font-weight: 700; }
         
-        /* Smooth scroll offset for sticky header - Reduced to match compact header */
-        html { scroll-padding-top: 140px; }
+        /* UPDATED: Reduced to 80px because only the Main Nav (approx 56px + cushion) is sticky now */
+        html { scroll-padding-top: 80px; }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased flex flex-col min-h-screen font-sans">
 
-    <!-- Compact Nav (Static) -->
+    <!-- Compact Nav (Sticky) -->
     <nav class="bg-white border-b border-slate-300 shadow-sm nav-height" id="global-nav">
         <!-- Injected by header-footer.js -->
     </nav>
 
-    <!-- Page Header (Dynamic Injection via exclusive-components.js) -->
+    <!-- Page Header (Static - Scrolls Away) -->
     <div id="dynamic-page-header"></div>
 
     <!-- Main Content Grid -->
@@ -56,7 +56,8 @@
             
             <!-- Sidebar: Navigation -->
             <aside class="lg:col-span-1 hidden lg:block">
-                <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-4 sticky top-36 max-h-[calc(100vh-10rem)] overflow-y-auto scrollbar-thin">
+                <!-- Sticky Top adjusted slightly to account for the single sticky header -->
+                <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-4 sticky top-24 max-h-[calc(100vh-6rem)] overflow-y-auto scrollbar-thin">
                     <h3 class="text-[10px] font-extrabold text-slate-400 uppercase tracking-widest mb-3">Topic Index</h3>
                     <ul id="topic-nav" class="space-y-1">
                         <!-- Nav items injected here -->
@@ -65,7 +66,7 @@
             </aside>
 
             <!-- Mobile Topic Select (Sticky below header) -->
-            <div class="lg:hidden col-span-1 sticky top-[110px] z-20 bg-slate-50 py-2 -mx-2 px-2 shadow-sm">
+            <div class="lg:hidden col-span-1 sticky top-[60px] z-20 bg-slate-50 py-2 -mx-2 px-2 shadow-sm transition-all">
                 <div class="relative">
                     <select id="mobile-topic-select" onchange="document.getElementById(this.value).scrollIntoView({behavior: 'smooth'})" class="w-full p-2.5 pl-9 rounded-lg border border-slate-300 bg-white font-bold text-xs shadow-sm focus:ring-1 focus:ring-blue-500 outline-none appearance-none text-slate-700">
                         <option value="" disabled selected>Jump to Topic...</option>

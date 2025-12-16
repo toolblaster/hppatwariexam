@@ -22,15 +22,19 @@ Global Styles (addBase): Handles html scroll behavior, scroll padding offsets (f
 
 Custom Components (addComponents):
 
+.page-container: Enforces a standard max-width and padding (max-w-7xl mx-auto px-4 ...) across all pages for layout consistency.
+
 .nav-height: Enforces consistent navbar height across pages.
 
-.flip-card: specialized 3D flip animation for terminology cards.
+.flip-card: specialized 3D flip animation for terminology cards. Note: Height is fixed at 12rem with overflow-y: auto and smaller font size on the back to accommodate variable content length.
 
 .exam-console: Styles for the mock test dashboard.
 
 .syllabus-card: Color-coded card components for exam topics.
 
-New Guide Components: * .guide-sidebar: Standardizes the sticky sidebar look for study notes.
+Guide Components:
+
+.guide-sidebar: Standardizes the sticky sidebar look for study notes.
 
 .mobile-select-container: Standardizes the sticky mobile dropdown container.
 
@@ -104,4 +108,4 @@ To change the Main Nav behavior (e.g., make it static instead of sticky), edit t
 
 To change the Page Header (H1) behavior, edit the ExclusiveStyles.pageHeader string in js/exclusive-components.js.
 
-Documentation updated: Dec 16, 2025
+Documentation updated: Dec 17, 2025

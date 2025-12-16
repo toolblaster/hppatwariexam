@@ -52,36 +52,37 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- GLOBAL STYLES & CONFIG -->
     <script src="../js/tailwind-global-css.js"></script>
-    <!-- Header Footer Script -->
+    <!-- Header Footer Script (Contains STATIC Global Nav Logic) -->
     <script src="../js/header-footer.js"></script>
-    <!-- EXCLUSIVE COMPONENTS (Page Headers) -->
+    <!-- EXCLUSIVE COMPONENTS (Contains STICKY H1 Header Logic) -->
     <script src="../js/exclusive-components.js"></script>
-    <!-- NEW: Global Scripts -->
+    <!-- Global Scripts -->
     <script src="../js/global-scripts.js"></script>
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts (Inter & Poppins ONLY) -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- Noto Sans Devanagari for Hindi Support -->
+    <!-- Noto Sans Devanagari -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
         .font-hindi { font-family: 'Noto Sans Devanagari', sans-serif; }
-        /* Smooth scroll offset for sticky header */
-        html { scroll-padding-top: 140px; }
+        /* Smooth scroll offset for content. Adjusted to ~80px since only Main Nav (approx 56px) is now sticky. */
+        html { scroll-padding-top: 80px; }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased flex flex-col min-h-screen font-sans">
 
-    <!-- Compact Nav (Static) -->
+    <!-- Compact Nav (Sticky: Sticks to Top) -->
     <nav class="bg-white border-b border-slate-300 shadow-sm nav-height" id="global-nav">
         <!-- Injected by header-footer.js -->
     </nav>
 
-    <!-- Page Header (Dynamic Injection via exclusive-components.js) -->
+    <!-- Page Header (Static: Scrolls Away) -->
+    <!-- Injected by exclusive-components.js -->
     <div id="dynamic-page-header"></div>
 
     <!-- Main Content -->
@@ -92,7 +93,7 @@
         <div id="app-content" class="space-y-6 md:space-y-12">
             
             <!-- MODULE 1: TERMINOLOGY -->
-            <section id="terminology" class="scroll-mt-24 border border-slate-400 rounded-2xl p-4 md:p-6 bg-white shadow-sm">
+            <section id="terminology" class="scroll-mt-32 border border-slate-400 rounded-2xl p-4 md:p-6 bg-white shadow-sm">
                 <!-- HEADER WITH TOGGLE & FILTERS -->
                 <div class="flex flex-col xl:flex-row justify-between items-center mb-4 md:mb-6 gap-4">
                     <!-- Title & Language Toggle -->
@@ -125,8 +126,8 @@
                 <div id="term-grid" class="hidden grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-2 md:gap-3"></div>
             </section>
 
-            <!-- MODULE 2: MEASUREMENTS (REDESIGNED & COMPACT) -->
-            <section id="measurements" class="scroll-mt-24 border border-slate-400 rounded-2xl p-3 md:p-4 bg-white shadow-sm">
+            <!-- MODULE 2: MEASUREMENTS -->
+            <section id="measurements" class="scroll-mt-32 border border-slate-400 rounded-2xl p-3 md:p-4 bg-white shadow-sm">
                 <!-- Header -->
                 <div class="mb-3 flex items-center justify-between">
                     <h2 class="text-base md:text-lg font-extrabold text-slate-900 flex items-center gap-2 font-heading">
@@ -244,7 +245,7 @@
             </section>
 
             <!-- MODULE 3: ACTS & LAWS -->
-            <section id="laws" class="scroll-mt-24 border border-slate-400 rounded-2xl p-4 md:p-6 bg-white shadow-sm">
+            <section id="laws" class="scroll-mt-32 border border-slate-400 rounded-2xl p-4 md:p-6 bg-white shadow-sm">
                 <h2 class="text-lg md:text-xl font-extrabold text-slate-900 mb-3 md:mb-4 flex items-center justify-center md:justify-start gap-2 font-heading">
                     <span class="w-1 h-5 md:h-6 bg-purple-600 rounded-full"></span> Vital Acts
                 </h2>
@@ -259,7 +260,7 @@
             </section>
 
             <!-- MODULE 4: HIERARCHY & TOOLS -->
-            <section id="hierarchy" class="scroll-mt-24 grid lg:grid-cols-2 gap-4 md:gap-6 border border-slate-400 rounded-2xl p-4 md:p-6 bg-white shadow-sm">
+            <section id="hierarchy" class="scroll-mt-32 grid lg:grid-cols-2 gap-4 md:gap-6 border border-slate-400 rounded-2xl p-4 md:p-6 bg-white shadow-sm">
                 <div class="bg-white rounded-xl shadow-smooth border border-slate-300 p-3 md:p-5">
                     <h2 class="text-sm font-bold text-slate-900 uppercase tracking-wider mb-4 md:mb-5 flex items-center justify-center md:justify-start gap-2 font-heading">
                         <i class="fa-solid fa-sitemap text-slate-400" aria-hidden="true"></i> Hierarchy

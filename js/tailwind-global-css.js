@@ -3,12 +3,13 @@
  * ----------------------------------------------------------------------
  * This file serves as the Single Source of Truth for the design system.
  * Updated to include specific styles for the "Exam Mode" quiz interface.
- * * 1. Typography (Strictly Inter & Poppins)
+ * 1. Typography (Strictly Inter & Poppins)
  * 2. Custom Components (Flip Cards, Tree Lines, Gradient Text)
  * 3. Layout Stability (Nav Height)
  * 4. Animations & Shadows
  * 5. Skeleton Loading (CLS Prevention)
  * 6. Exam UI Components (New!)
+ * 7. GLOBAL BASE STYLES (Centralized CSS replacement)
  * ----------------------------------------------------------------------
  */
 
@@ -18,6 +19,7 @@ tailwind.config = {
             fontFamily: {
                 sans: ['Inter', 'sans-serif'],    // Primary Font (Body, UI, Numbers)
                 heading: ['Poppins', 'sans-serif'], // Heading Font (H1-H6)
+                hindi: ['Noto Sans Devanagari', 'sans-serif'], // Hindi Font
             },
             boxShadow: {
                 'smooth': '0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.02)',
@@ -51,13 +53,14 @@ tailwind.config = {
         function({ addBase, addComponents, addUtilities }) {
             
             /* ---------------------------------------------------------
-             * 1. GLOBAL BASE STYLES
+             * 1. GLOBAL BASE STYLES (Previously in global-styles.css)
              * --------------------------------------------------------- */
             addBase({
                 'html': { 
                     scrollBehavior: 'smooth',
                     fontSize: '15px',
                     fontFamily: 'Inter, sans-serif',
+                    scrollPaddingTop: '80px', /* Crucial for Sticky Header offset */
                 },
                 'body': {
                     fontFamily: 'Inter, sans-serif',
@@ -65,6 +68,7 @@ tailwind.config = {
                 'h1, h2, h3, h4, h5, h6': {
                     fontFamily: 'Poppins, sans-serif',
                 },
+                /* Custom Scrollbar - Global Default */
                 '::-webkit-scrollbar': { 
                     width: '6px',
                     height: '6px'
@@ -79,10 +83,56 @@ tailwind.config = {
                 '::-webkit-scrollbar-thumb:hover': { 
                     background: '#94a3b8' 
                 },
+                
+                /* RICH TEXT CONTENT STYLING (For Study Notes) */
+                '.note-content p': { 
+                    marginBottom: '0.75rem', 
+                    lineHeight: '1.6', 
+                },
+                '.note-content ul': { 
+                    marginLeft: '1.2rem', 
+                    listStyleType: 'disc', 
+                    marginBottom: '0.75rem', 
+                },
+                '.note-content ol': { 
+                    marginLeft: '1.2rem', 
+                    listStyleType: 'decimal', 
+                    marginBottom: '0.75rem', 
+                },
+                '.note-content li': { 
+                    marginBottom: '0.25rem', 
+                },
+                '.note-content strong': { 
+                    color: '#1e293b', 
+                    fontWeight: '700', 
+                },
             });
 
             /* ---------------------------------------------------------
-             * 2. CUSTOM COMPONENTS
+             * 2. CUSTOM UTILITIES (New Additions)
+             * --------------------------------------------------------- */
+            addUtilities({
+                // Hide Scrollbar (keep functionality)
+                '.scrollbar-hide': {
+                    '-ms-overflow-style': 'none',  /* IE and Edge */
+                    'scrollbar-width': 'none',  /* Firefox */
+                    '&::-webkit-scrollbar': {
+                        display: 'none'
+                    }
+                },
+                
+                // Thin Scrollbar (Specific override)
+                '.scrollbar-thin': {
+                    'scrollbar-width': 'thin',
+                    '&::-webkit-scrollbar': {
+                        width: '4px',
+                        height: '4px'
+                    }
+                }
+            });
+
+            /* ---------------------------------------------------------
+             * 3. CUSTOM COMPONENTS
              * --------------------------------------------------------- */
             addComponents({
                 // Header/Nav fixed height
@@ -90,6 +140,11 @@ tailwind.config = {
                     height: '3.5rem', // 56px
                     minHeight: '3.5rem',
                     contain: 'layout size',
+                },
+                
+                // Helper utility for hindi font
+                '.font-hindi': {
+                     fontFamily: 'Noto Sans Devanagari, sans-serif',
                 },
 
                 // Compact Card Hover Effect
@@ -107,21 +162,6 @@ tailwind.config = {
                     color: 'transparent',
                     fontWeight: '800',
                     display: 'inline-block',
-                },
-
-                // Gradient Border Accent
-                '.gradient-border-top': {
-                    position: 'relative',
-                    overflow: 'hidden',
-                },
-                '.gradient-border-top::before': {
-                    content: '""',
-                    position: 'absolute',
-                    top: '0',
-                    left: '0',
-                    width: '100%',
-                    height: '3px',
-                    background: 'linear-gradient(90deg, #3b82f6, #06b6d4)',
                 },
 
                 // Tree Line
@@ -149,7 +189,7 @@ tailwind.config = {
                 },
 
                 /* -----------------------------------------------------
-                 * 3. FLIP CARD COMPONENT
+                 * 4. FLIP CARD COMPONENT
                  * ----------------------------------------------------- */
                 '.flip-card': {
                     perspective: '1000px',
@@ -193,34 +233,17 @@ tailwind.config = {
                 },
 
                 /* -----------------------------------------------------
-                 * 4. EXAM UI COMPONENTS (NEW)
+                 * 5. EXAM UI COMPONENTS
                  * ----------------------------------------------------- */
                 
                 // Syllabus Card Style
                 '.syllabus-card': {
                     '@apply bg-white rounded-xl p-4 border shadow-sm relative overflow-hidden group hover:shadow-md transition hover:-translate-y-1': {},
                 },
-                '.syllabus-card-green': {
-                    '@apply border-green-300': {},
-                },
-                '.syllabus-card-blue': {
-                    '@apply border-blue-300': {},
-                },
-                '.syllabus-card-purple': {
-                    '@apply border-purple-300': {},
-                },
-
                 // Exam Console (Dark Dashboard)
                 '.exam-console': {
                     '@apply bg-slate-900 rounded-xl p-4 md:p-5 shadow-lg relative overflow-hidden text-white': {},
                 },
-                '.console-btn': {
-                    '@apply rounded-lg border text-[10px] font-bold transition flex items-center justify-center gap-2 group whitespace-nowrap px-3 py-1.5': {},
-                },
-                '.console-input': {
-                    '@apply bg-slate-800 border border-slate-600 text-white text-xs p-1.5 rounded text-center outline-none focus:border-blue-500': {},
-                },
-
                 // Quiz Question Card (Ultra Compact)
                 '.quiz-card': {
                     '@apply bg-white rounded-lg shadow-xl border border-slate-300 relative overflow-hidden flex flex-col transition-all duration-300 min-h-[400px]': {},
@@ -229,7 +252,7 @@ tailwind.config = {
                     '@apply w-full text-left p-2.5 rounded border border-slate-400 hover:border-blue-400 hover:bg-blue-50 transition-all duration-100 text-slate-700 font-medium relative group text-[11px] md:text-xs flex flex-col justify-center h-full shadow-sm bg-slate-50/50': {},
                 },
                 
-                // Toast Notification
+                // Toast Notification Animation Class
                 '.toast-visible': {
                     animation: 'toast-fade 3s forwards',
                 }
